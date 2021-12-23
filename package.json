@@ -1,0 +1,28 @@
+{
+  "name": "amlacen-online",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "@heroku-cli/plugin-buildpacks": "^7.54.0",
+    "@heroku/buildpack-registry": "^1.0.1",
+    "async-file": "^2.0.2",
+    "bcrypt": "^5.0.0",
+    "bindings": "^1.5.0",
+    "heroku": "^7.59.2",
+    "js-cookie": "^2.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.14",
+    "next": "10.0.1",
+    "phoenix": "^1.6.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "valid-url": "^1.0.9",
+    "ws": "^8.4.0"
+  }
+}
