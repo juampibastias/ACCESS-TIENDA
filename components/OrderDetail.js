@@ -43,7 +43,7 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                         <div className={`alert ${order.delivered ? 'alert-success' : 'alert-danger'}
                         d-flex justify-content-between align-items-center`} role="alert">
                             {
-                                order.delivered ? `Deliverd on ${order.updatedAt}` : 'No entregado'
+                                order.delivered ? `Entregado ${order.updatedAt}` : 'No entregado'
                             }
                             {
                                 auth.user.role === 'admin' && !order.delivered &&
@@ -67,7 +67,7 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                         <div className={`alert ${order.paid ? 'alert-success' : 'alert-danger'}
                         d-flex justify-content-between align-items-center`} role="alert">
                             {
-                                order.paid ? `Paid on ${order.dateOfPayment}` : 'Not Paid'
+                                order.paid ? `Paid on ${order.dateOfPayment}` : 'Pendiente'
                             }
                             
                         </div>

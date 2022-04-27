@@ -63,7 +63,7 @@ const Home = (props) => {
   return(
     <div className="home_page">
       <Head>
-        <title>Almacén-online Tu sitio de compras</title>
+        <title>ACCESS - TIENDA</title>
       </Head>
 
       <Filter state={state} />

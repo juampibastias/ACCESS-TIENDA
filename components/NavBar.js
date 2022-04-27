@@ -70,18 +70,48 @@ function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="text-center"  href="/">
-                <a className="navbar-brand text-center">ALMACEN online <br></br>
-                <img src='/images/rank.png' style={{width:"100px"}} className='p-2' alt="rank" /> 
-                <img src='/images/la-carniceria.png' style={{width:"100px"}} className='p-2' alt="carni" />
-                <img src='/images/laver.png' style={{width:"100px"}} className='p-2' alt="verdu" />
-                </a>
-                
+                <a className="navbar-brand text-center"><img src='/public/images/logo.png' alt='logo-access'></img></a>
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul className="navbar-nav p-1">
+                <li className="nav-item">
+                        <Link href="/nosotros">
+                            <a className={"nav-link" + isActive('/nosotros')}>
+                                NOSOTROS
+                            </a>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link href="/sucursales">
+                            <a className={"nav-link" + isActive('/sucursales')}>
+                                SUCURSALES
+                            </a>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link href="/servicios">
+                            <a className={"nav-link" + isActive('/servicios')}>
+                                SERVICIOS
+                            </a>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link href="/novedades">
+                            <a className={"nav-link" + isActive('/novedades')}>
+                                NOVEDADES
+                            </a>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link href="/">
+                            <a className={"nav-link" + isActive('/')}>
+                                TIENDA
+                            </a>
+                        </Link>
+                    </li>
                     <li className="nav-item">
                         <Link href="/cart">
                             <a className={"nav-link" + isActive('/cart')}>
@@ -98,7 +128,7 @@ function NavBar() {
                                     }}>
                                         {cart.length}
                                     </span>
-                                </i> Carrito
+                                </i> CARRITO
                             </a>
                         </Link>
                     </li>

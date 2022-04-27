@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "start": "next start"
   },
   "dependencies": {
     "@heroku-cli/plugin-buildpacks": "^7.54.0",
@@ -14,11 +13,11 @@
     "async-file": "^2.0.2",
     "bcrypt": "^5.0.0",
     "bindings": "^1.5.0",
-    "heroku": "^7.59.2",
+    "heroku": "^7.2.0",
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.14",
-    "next": "10.0.1",
+    "next": "^12.1.5",
     "phoenix": "^1.6.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
