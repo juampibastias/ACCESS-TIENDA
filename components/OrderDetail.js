@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import PaypalBtn from './paypalBtn'
+import checkOutPro  from './checkOutPro'
 import {patchData} from '../utils/fetchData'
 import {updateItem} from '../store/Actions'
 
@@ -37,6 +37,9 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                         <h3>Datos de envío</h3>
                         <p>Nombre: {order.user.name}</p>
                         <p>Email: {order.user.email}</p>
+                        <p>Provincia: {order.user.provincia}</p>
+                        <p>Ciudad: {order.user.ciudad}</p>
+                        <p>Codigo postal: {order.user.cp}</p>
                         <p>Dirección: {order.address}</p>
                         <p>Telefono: {order.mobile}</p>
 
@@ -104,7 +107,6 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                     !order.paid && auth.user.role !== 'admin' &&
                     <div className="p-4">
                         <h2 className="mb-4 text-uppercase">Total: ${order.total}</h2>
-                        <mercadoPago order={order} />
                     </div>
                 }
                

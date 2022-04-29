@@ -5,15 +5,20 @@ import CartItem from '../components/CartItem'
 import Link from 'next/link'
 import { getData, postData } from '../utils/fetchData'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
+import pibeDeFondo from '../public/images/pibeDeFondo.png'
 
-
+let itemMp;
 const Cart = () => {
   const { state, dispatch } = useContext(DataContext)
   const { cart, auth, orders } = state
 
   const [total, setTotal] = useState(0)
 
+  const [provincia, setProvincia] = useState('')
+  const [ciudad, setCiudad] = useState('')
   const [address, setAddress] = useState('')
+  const [cp, setCp] = useState('')
   const [mobile, setMobile] = useState('')
   const [coment, setComent] = useState('')
   
@@ -57,7 +62,7 @@ const Cart = () => {
 
   const handlePayment = async () => {
     if(!address || !mobile || !coment)
-    return dispatch({ type: 'NOTIFY', payload: {error: 'Please add your address and mobile.'}})
+    return dispatch({ type: 'NOTIFY', payload: {error: 'Por favor, complete los datos de envío.'}})
 
     let newCart = [];
     for(const item of cart){
@@ -65,18 +70,24 @@ const Cart = () => {
       if(res.product.inStock - item.quantity >= 0){
         newCart.push(item)
       }
+      itemMp = ({
+        title: item.title,
+        price: item.price,
+        quantity: item.quantity 
+      })
+      console.log(itemMp)
     }
     
     if(newCart.length < cart.length){
       setCallback(!callback)
       return dispatch({ type: 'NOTIFY', payload: {
-        error: 'The product is out of stock or the quantity is insufficient.'
+        error: 'El producto está agotado o la cantidad es insuficiente.'
       }})
     }
 
     dispatch({ type: 'NOTIFY', payload: {loading: true} })
 
-    postData('order', {address, mobile, coment, cart, total}, auth.token)
+    postData('order', {provincia, ciudad, address, cp,  mobile, coment, cart, total}, auth.token)
     .then(res => {
       if(res.err) return dispatch({ type: 'NOTIFY', payload: {error: res.err} })
 
@@ -90,16 +101,17 @@ const Cart = () => {
       dispatch({ type: 'NOTIFY', payload: {success: res.msg} })
       return router.push(`/order/${res.newOrder._id}`)
     })
+    
 
   }
   
   if( cart.length === 0 ) 
-    return <img className="img-responsive w-100" src="/empty_cart.jpg" alt="not empty"/>
+    return <Image className="img-responsive w-100" src={pibeDeFondo} alt="not empty"/>
 
     return(
       <div className="row mx-auto">
         <Head>
-          <title>Cart Page</title>
+          <title>Carrito</title>
         </Head>
 
         <div className="col-md-8 text-secondary table-responsive my-3">
@@ -119,16 +131,31 @@ const Cart = () => {
         <div className="col-md-4 my-3 text-right text-uppercase text-secondary">
             <form>
               <h2>Datos de envio</h2>
+              <label htmlFor="address">Provincia</label>
+              <input type="text" name="provincia" id="provincia"
+              className="form-control mb-2" value={provincia}
+              onChange={e => setProvincia(e.target.value)} placeholder="Por ejemplo Mendoza..." />
+
+              <label htmlFor="address">Ciudad</label>
+              <input type="text" name="ciudad" id="ciudad"
+              className="form-control mb-2" value={ciudad}
+              onChange={e => setCiudad(e.target.value)} placeholder="Por ejemplo Rivadavia..." />
 
               <label htmlFor="address">Dirección</label>
               <input type="text" name="address" id="address"
               className="form-control mb-2" value={address}
-              onChange={e => setAddress(e.target.value)} />
+              onChange={e => setAddress(e.target.value)} placeholder="ingrese su calle y número" />
 
+              <label htmlFor="address">Código postal</label>
+              <input type="text" name="cp" id="cp"
+              className="form-control mb-2" value={cp}
+              onChange={e => setCp(e.target.value)} placeholder="Por ejemplo 5560" />
+              
               <label htmlFor="mobile">Numero de telefono con Whatsapp</label>
               <input type="text" name="mobile" id="mobile"
               className="form-control mb-2" value={mobile}
-              onChange={e => setMobile(e.target.value)} />
+              onChange={e => setMobile(e.target.value)} placeholder="+54 9 xxxxxxxxx" />
+              
               <label htmlFor="coment">Comentario</label>
               <input type="text" name="coment" id="coment" placeholder='entre que calles, horario de visita, etc.'
               className="form-control mb-2" value={coment}
@@ -136,7 +163,10 @@ const Cart = () => {
             </form>
 
             <h3>Total: <span className="text-danger">${total}</span></h3>
-
+            
+            <Link href="/">
+              <a className="btn btn-dark my-2">Seguir comprando</a>
+            </Link>
             
             <Link href={auth.user ? '#!' : '/signin'}>
               <a className="btn btn-dark my-2" onClick={handlePayment}>Finalizar compra</a>

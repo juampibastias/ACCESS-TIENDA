@@ -3,6 +3,8 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import {DataContext} from '../store/GlobalState'
 import Cookie from 'js-cookie'
+import Image from 'next/image'
+import logo from '../public/images/logo.png'
 
 function NavBar() {
     const router = useRouter()
@@ -22,7 +24,7 @@ function NavBar() {
         Cookie.remove('refreshtoken', {path: 'api/auth/accessToken'})
         localStorage.removeItem('firstLogin')
         dispatch({ type: 'AUTH', payload: {} })
-        dispatch({ type: 'NOTIFY', payload: {success: 'Logged out!'} })
+        dispatch({ type: 'NOTIFY', payload: {success: '¡Desconectado!'} })
         return router.push('/')
     }
 
@@ -68,9 +70,9 @@ function NavBar() {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link className="text-center"  href="/">
-                <a className="navbar-brand text-center"><img src='/public/images/logo.png' alt='logo-access'></img></a>
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark text-light">
+            <Link className="text-center"  href="/home">
+                <a className="navbar-brand text-center"><Image src={logo} alt='logo-access' /></a>
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -79,42 +81,42 @@ function NavBar() {
                 <ul className="navbar-nav p-1">
                 <li className="nav-item">
                         <Link href="/nosotros">
-                            <a className={"nav-link" + isActive('/nosotros')}>
+                            <a style={{color:'white'}} className={"nav-link" + isActive('/nosotros')}>
                                 NOSOTROS
                             </a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/sucursales">
-                            <a className={"nav-link" + isActive('/sucursales')}>
+                            <a style={{color:'white'}} className={"nav-link" + isActive('/sucursales')}>
                                 SUCURSALES
                             </a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/servicios">
-                            <a className={"nav-link" + isActive('/servicios')}>
+                            <a style={{color:'white'}} className={"nav-link" + isActive('/servicios')}>
                                 SERVICIOS
                             </a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/novedades">
-                            <a className={"nav-link" + isActive('/novedades')}>
+                            <a style={{color:'white'}} className={"nav-link" + isActive('/novedades')}>
                                 NOVEDADES
                             </a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/">
-                            <a className={"nav-link" + isActive('/')}>
+                            <a style={{color:'white'}} className={"nav-link" + isActive('/')}>
                                 TIENDA
                             </a>
                         </Link>
                     </li>
                     <li className="nav-item">
                         <Link href="/cart">
-                            <a className={"nav-link" + isActive('/cart')}>
+                            <a style={{color:'white'}} className={"nav-link" + isActive('/cart')}>
                                 <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
                                     <span className="position-absolute"
                                     style={{
@@ -136,7 +138,7 @@ function NavBar() {
                         Object.keys(auth).length === 0 
                         ? <li className="nav-item">
                             <Link href="/signin">
-                                <a className={"nav-link" + isActive('/signin')}>
+                                <a style={{color:'white'}} className={"nav-link" + isActive('/signin')}>
                                     <i className="fas fa-user" aria-hidden="true"></i> Ingresar
                                 </a>
                             </Link>
