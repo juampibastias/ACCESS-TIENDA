@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import checkOutPro  from './checkOutPro'
 import {patchData} from '../utils/fetchData'
 import {updateItem} from '../store/Actions'
 
