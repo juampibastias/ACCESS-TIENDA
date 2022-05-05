@@ -12,11 +12,12 @@ const Profile = () => {
     const initialSate = {
         avatar: '',
         name: '',
+        phone: '',
         password: '',
         cf_password: ''
     }
     const [data, setData] = useState(initialSate)
-    const { avatar, name, password, cf_password } = data
+    const { avatar, name, phone, password, cf_password } = data
 
     const {state, dispatch} = useContext(DataContext)
     const { auth, notify, orders } = state
@@ -34,7 +35,7 @@ const Profile = () => {
     const handleUpdateProfile = e => {
         e.preventDefault()
         if(password){
-            const errMsg = valid(name, auth.user.email, password, cf_password)
+            const errMsg = valid(name, phone, auth.user.email, password, cf_password)
             if(errMsg) return dispatch({ type: 'NOTIFY', payload: {error: errMsg} })
             updatePassword()
         }
@@ -54,13 +55,13 @@ const Profile = () => {
     const changeAvatar = (e) => {
         const file = e.target.files[0]
         if(!file)
-            return dispatch({type: 'NOTIFY', payload: {error: 'El archivo no existe.'}})
+            return dispatch({type: 'NOTIFY', payload: {error: 'File does not exist.'}})
 
         if(file.size > 1024 * 1024) //1mb
-            return dispatch({type: 'NOTIFY', payload: {error: 'El tamaño de la imagen debe ser inferior a 1mb.'}})
+            return dispatch({type: 'NOTIFY', payload: {error: 'The largest image size is 1mb.'}})
 
         if(file.type !== "image/jpeg" && file.type !== "image/png") //1mb
-            return dispatch({type: 'NOTIFY', payload: {error: 'Formato de imagen incorrecto.'}})
+            return dispatch({type: 'NOTIFY', payload: {error: 'Image format is incorrect.'}})
         
         setData({...data, avatar: file})
     }
@@ -89,7 +90,7 @@ const Profile = () => {
     return( 
         <div className="profile_page">
             <Head>
-                <title>Profile</title>
+                <title>Perfil</title>
             </Head>
 
             <section className="row text-secondary my-3">
@@ -116,6 +117,12 @@ const Profile = () => {
                     </div>
 
                     <div className="form-group">
+                        <label htmlFor="phone">Teléfono</label>
+                        <input type="text" name="phone" value={phone} className="form-control"
+                        placeholder="Su teléfono" onChange={handleChange} />
+                    </div>
+
+                    <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" defaultValue={auth.user.email} 
                         className="form-control" disabled={true} />
@@ -124,23 +131,23 @@ const Profile = () => {
                     <div className="form-group">
                         <label htmlFor="password">Nueva contraseña</label>
                         <input type="password" name="password" value={password} className="form-control"
-                        placeholder="Su contraseña" onChange={handleChange} />
+                        placeholder="Nueva contraseña" onChange={handleChange} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="cf_password">Confirme nueva contraseña</label>
                         <input type="password" name="cf_password" value={cf_password} className="form-control"
-                        placeholder="Confirme su contraseña" onChange={handleChange} />
+                        placeholder="Confirme nueva contraseña" onChange={handleChange} />
                     </div>
 
                     <button className="btn btn-info" disabled={notify.loading}
                     onClick={handleUpdateProfile}>
-                        Actualizar
+                        Actulizar
                     </button>
                 </div>
 
                 <div className="col-md-8">
-                    <h3 className="text-uppercase">Pedidos</h3>
+                    <h3 className="text-uppercase">Orden de compra</h3>
 
                     <div className="my-3 table-responsive">
                         <table className="table-bordered table-hover w-100 text-uppercase"
@@ -148,10 +155,10 @@ const Profile = () => {
                             <thead className="bg-light font-weight-bold">
                                 <tr>
                                     <td className="p-2">id</td>
-                                    <td className="p-2">día</td>
-                                    <td className="p-2">total</td>
-                                    <td className="p-2">entregado</td>
-                                    <td className="p-2">pago</td>
+                                    <td className="p-2">Día</td>
+                                    <td className="p-2">Total</td>
+                                    <td className="p-2">Entregado</td>
+                                    <td className="p-2">Estado de pago</td>
                                 </tr>
                             </thead>
 

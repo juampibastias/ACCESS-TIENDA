@@ -1,15 +1,15 @@
-const valid = (name, email, password, cf_password) => {
-    if(!name || !email || !password)
-    return 'Please add all fields.'
+const valid = (name, phone, email, password, cf_password) => {
+    if(!name || !phone || !email || !password)
+    return 'Por favor complete todo los campos.'
 
     if(!validateEmail(email))
-    return 'Invalid emails.'
+    return 'Email inválido.'
 
     if(password.length < 6)
-    return 'Password must be at least 6 characters.'
+    return 'La contraseña debe tener al menos 6 caracteres.'
 
     if(password !== cf_password)
-    return 'Confirm password did not match.'
+    return 'Las contraseñas no coinciden.'
 }
 
 

@@ -53,7 +53,7 @@ const EditUser = () => {
     return (
         <div className="edit_user my-3">
             <Head>
-                <title>Edit User</title>
+                <title>Edición de usuario</title>
             </Head>
 
             <div>
@@ -68,6 +68,11 @@ const EditUser = () => {
                 <div className="form-group">
                     <label htmlFor="name" className="d-block">Nombre</label>
                     <input type="text" id="name" defaultValue={editUser.name} disabled />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="phone" className="d-block">Teléfono</label>
+                    <input type="text" id="phone" defaultValue={editUser.phone} disabled />
                 </div>
 
                 <div className="form-group">

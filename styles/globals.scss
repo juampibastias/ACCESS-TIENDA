@@ -1,0 +1,112 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+$color-2:#534080;
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+//HOME----
+//-----------
+
+.contenedor-home{
+    .carousel-indicators{
+        display: none;
+    }
+}
+
+//FOOTER
+//-----------
+footer {
+    display: flex;
+    width: 100%;
+    min-height: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-2;
+
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        padding: 0;
+        width: 80%;
+        justify-content: space-around;
+
+        li {
+            list-style: none;
+
+            h5 {
+                font-weight: 700;
+                color: white;
+            }
+
+            p {
+                color: white;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                padding: 0;
+                width: 80%;
+
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    margin: 0 auto;
+                    padding: 0;
+                    width: 80%;
+                    color: white;
+
+                }
+            }
+        }
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    object-fit: cover;
+    object-position: 0 30%;
+}
+
+/* ----------- Loading ------------- */
+@import url("./loading.css");
+
+/* ----------- Products ------------- */
+@import url("./product.css");
+
+/* ----------- Profile ------------- */
+@import url("./profile.css");
+
+/* ----------- Products Manager ------------- */
+@import url("./products_manager.css");
+
+ul li a {
+    color: white;
+}

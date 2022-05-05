@@ -1,8 +1,102 @@
+@import url("./loading.css");
+@import url("./product.css");
+@import url("./profile.css");
+@import url("./products_manager.css");
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: sansation;
+  font-family: sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor-home .carousel-indicators {
+  display: none;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 400px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #534080;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li h5 {
+  font-weight: 700;
+  color: white;
+}
+
+footer ul li p {
+  color: white;
+}
+
+footer ul li ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+}
+
+footer ul li ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  color: white;
 }
 
 a {
@@ -11,26 +105,22 @@ a {
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-img{
-  object-fit: cover;
-  object-position: 0 30%;
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 30%;
+     object-position: 0 30%;
 }
 
 /* ----------- Loading ------------- */
-@import url("./loading.css");
-
 /* ----------- Products ------------- */
-@import url("./product.css");
-
 /* ----------- Profile ------------- */
-@import url("./profile.css");
-
 /* ----------- Products Manager ------------- */
-@import url("./products_manager.css");
-
-ul li a{
+ul li a {
   color: white;
 }
+/*# sourceMappingURL=globals.css.map */

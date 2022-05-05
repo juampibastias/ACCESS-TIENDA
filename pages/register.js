@@ -8,9 +8,9 @@ import { useRouter } from 'next/router'
 
 
 const Register = () => {
-  const initialState = { name: '', email: '', password: '', cf_password: '' }
+  const initialState = { name: '', phone: '', email: '', password: '', cf_password: '' }
   const [userData, setUserData] = useState(initialState)
-  const { name, email, password, cf_password } = userData
+  const { name, phone, email, password, cf_password } = userData
 
   const {state, dispatch} = useContext(DataContext)
   const { auth } = state
@@ -25,7 +25,7 @@ const Register = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const errMsg = valid(name, email, password, cf_password)
+    const errMsg = valid(name, phone, email, password, cf_password)
     if(errMsg) return dispatch({ type: 'NOTIFY', payload: {error: errMsg} })
 
     dispatch({ type: 'NOTIFY', payload: {loading: true} })
@@ -52,6 +52,12 @@ const Register = () => {
             <label htmlFor="name">Nombre</label>
             <input type="text" className="form-control" id="name"
             name="name" value={name} onChange={handleChangeInput} />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="phone">Teléfono</label>
+            <input type="text" className="form-control" id="phone"
+            name="phone" value={phone} onChange={handleChangeInput} />
           </div>
 
           <div className="form-group">

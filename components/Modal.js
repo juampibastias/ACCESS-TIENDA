@@ -72,7 +72,7 @@ const Modal = () => {
                     </button>
                 </div>
                 <div className="modal-body">
-                    Quieres eliminar un artículo?
+                    Deseas eliminarlo realmente?
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={handleSubmit}>Sí</button>

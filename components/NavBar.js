@@ -32,13 +32,13 @@ function NavBar() {
         return(
             <>
             <Link href="/users">
-                <a className="dropdown-item">Usuario</a>
+                <a className="dropdown-item">Administrar Usuarios</a>
             </Link>
             <Link href="/create">
-                <a className="dropdown-item">Productos</a>
+                <a className="dropdown-item">Agregar Productos</a>
             </Link>
             <Link href="/categories">
-                <a className="dropdown-item">Categorias</a>
+                <a className="dropdown-item">Administrar Categorias</a>
             </Link>
             </>
         )

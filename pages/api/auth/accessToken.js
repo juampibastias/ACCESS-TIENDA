@@ -22,6 +22,7 @@ export default async (req, res) => {
             user: {
                 name: user.name,
                 email: user.email,
+                phone: user.phone,
                 role: user.role,
                 avatar: user.avatar,
                 root: user.root
