@@ -6,7 +6,7 @@ import Footer from './Footer'
 
 function Layout({children}) {
     return (
-        <div className="container">
+        <div className="container-general">
             <NavBar />
             <Notify />
             <Modal />
