@@ -1,3 +1,4 @@
+@import url("https://fonts.cdnfonts.com/css/sansation");
 @import url("./loading.css");
 @import url("./product.css");
 @import url("./profile.css");
@@ -6,7 +7,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sansation, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .container {
@@ -30,6 +31,20 @@ body {
 .row {
   margin: 0;
   padding: 0;
+}
+
+.container-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #534080;
+}
+
+.container-widget i {
+  color: white;
 }
 
 .links-list {

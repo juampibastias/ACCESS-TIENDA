@@ -1,8 +1,10 @@
+@import url("https://fonts.cdnfonts.com/css/sansation");
+
 html,
 body {
     padding: 0;
     margin: 0;
-    font-family: sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: sansation, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 $color-2:#534080;
@@ -24,6 +26,19 @@ $color-2-2:#8268c1;
 .row {
     margin: 0;
     padding: 0;
+}
+
+//WIDGET
+.container-widget {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-2;
+
+    i {
+        color: white;
+    }
 }
 
 //LINKS NAV

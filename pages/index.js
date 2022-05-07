@@ -7,6 +7,7 @@ import ProductItem from '../components/product/ProductItem'
 import filterSearch from '../utils/filterSearch'
 import {useRouter} from 'next/router'
 import Filter from '../components/Filter'
+import MiniCartWidget from '../components/widget/minicart'
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products)
@@ -65,7 +66,7 @@ const Home = (props) => {
       <Head>
         <title>ACCESS - TIENDA</title>
       </Head>
-
+    <MiniCartWidget />
       <Filter state={state} />
 
       {
