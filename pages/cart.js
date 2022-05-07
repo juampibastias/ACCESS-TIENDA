@@ -109,15 +109,32 @@ const Cart = () => {
     return <Image className="img-responsive w-100" src={pibeDeFondo} alt="not empty"/>
 
     return(
-      <div className="row mx-auto">
+      <div className='contenedor-carrito'>
+         <nav aria-label="breadcrumb">
+  <ol className="breadcrumb">
+    <li className="breadcrumb-item"><a href="home">Inicio</a></li>
+    <li className="breadcrumb-item active" aria-current="page">Carrito</li>
+  </ol>
+</nav>
+      <div className="contenedor-carro-envio">
         <Head>
           <title>Carrito</title>
         </Head>
 
-        <div className="col-md-8 text-secondary table-responsive my-3">
-          <h2 className="text-uppercase">Carrito de compras</h2>
+        <div className='contenedor-articulos'>
+          <div className=" text-secondary table-responsive my-3">
+          <h1 className="text-uppercase title">Carrito de compras</h1>
 
           <table className="table my-3">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"></th>
+                </tr>
+            </thead>
             <tbody>
               {
                 cart.map(item => (
@@ -127,16 +144,17 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
+        </div>
 
-        <div className="col-md-4 my-3 text-right text-uppercase text-secondary">
+        <div className="col-md-4 my-3 text-right text-uppercase text-secondary contenedor-envio">
             <form>
               <h2>Datos de envio</h2>
-              <label htmlFor="provincia">Provincia</label>
+              <label htmlFor="address">Provincia</label>
               <input type="text" name="provincia" id="provincia"
               className="form-control mb-2" value={provincia}
               onChange={e => setProvincia(e.target.value)} placeholder="Por ejemplo Mendoza..." />
 
-              <label htmlFor="ciudad">Ciudad</label>
+              <label htmlFor="address">Ciudad</label>
               <input type="text" name="ciudad" id="ciudad"
               className="form-control mb-2" value={ciudad}
               onChange={e => setCiudad(e.target.value)} placeholder="Por ejemplo Rivadavia..." />
@@ -146,7 +164,7 @@ const Cart = () => {
               className="form-control mb-2" value={address}
               onChange={e => setAddress(e.target.value)} placeholder="ingrese su calle y número" />
 
-              <label htmlFor="cp">Código postal</label>
+              <label htmlFor="address">Código postal</label>
               <input type="text" name="cp" id="cp"
               className="form-control mb-2" value={cp}
               onChange={e => setCp(e.target.value)} placeholder="Por ejemplo 5560" />
@@ -173,6 +191,7 @@ const Cart = () => {
             </Link>
             
         </div>
+      </div>
       </div>
     )
   }

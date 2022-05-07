@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Novedades = () => {
   return (
-    <div>
+    <div className='contenedor-novedades'>
       
     {/* <!-- NAV DE NOVEDADES Y PAGINACION --> */}
 
@@ -16,30 +16,30 @@ export const Novedades = () => {
 
   {/* <!-- CONTENEDORES DE NOVEDADES --> */}
 
-  <div className="container-fluid m-5">
-    <div className=" ">
-      <div className="novedad  bg-danger p-2 m-2">
+  <div className="">
+    <div className=" lista-novedades">
+      <div className="novedad  bg-danger">
         <img
           className="novedad-imagen"
           src="images/Auricular-jbl.png"
           alt=""
         />
       </div>
-      <div className="novedad  bg-dark p-2 m-2">
+      <div className="novedad  bg-dark">
         <img
           className="novedad-imagen"
           src="images/IMPRESORA-HP.png"
           alt=""
         />
       </div>
-      <div className="novedad  bg-warning p-2 m-2">
+      <div className="novedad  bg-warning">
         <img
           className="novedad-imagen"
           src="images/parlante-jbl1.png"
           alt=""
         />
       </div>
-      <div className="novedad  bg-success p-2 m-2">
+      <div className="novedad  bg-success">
         <img
           className="novedad-imagen"
           src="images/pibe-de-fondo.png"

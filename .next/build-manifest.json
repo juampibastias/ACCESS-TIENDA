@@ -30,20 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/register": [
+    "/novedades": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/register.js"
+      "static/chunks/pages/novedades.js"
     ],
-    "/signin": [
+    "/sucursales": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/signin.js"
-    ],
-    "/users": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/users.js"
+      "static/chunks/pages/sucursales.js"
     ]
   },
   "ampFirstPages": []
