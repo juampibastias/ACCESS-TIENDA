@@ -79,7 +79,7 @@ const Register = () => {
             name="cf_password" value={cf_password} onChange={handleChangeInput} />
           </div>
           
-          <button type="submit" className="btn btn-dark w-100">Enviar</button>
+          <button type="submit" className="btn sign w-100">Enviar</button>
 
           <p className="my-2">
             Ya tienes una cuenta? <Link href="/signin"><a style={{color: 'crimson'}}>Ingresar ahora</a></Link>

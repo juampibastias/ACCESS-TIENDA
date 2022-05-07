@@ -58,14 +58,16 @@ const DetailProduct = (props) => {
                     {product.content}
                 </div>
 
-                <button type="button" className="btn btn-dark d-block my-3 px-5"
+              <div className='botonera'>
+              <button type="button" className="btn add-to-cart"
                 onClick={() => dispatch(addToCart(product, cart))} >
                     Añadir al carrito
                 </button>
                 
-                <button type="button" className="btn btn-dark d-block my-3 px-5">
+                <button type="button" className="btn continue">
                     <a href='/'>Seguir comprando</a>
                 </button>
+              </div>
                 <div>
             </div>
 

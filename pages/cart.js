@@ -183,11 +183,11 @@ const Cart = () => {
             <h3>Total: <span className="text-danger">${total}</span></h3>
             
             <Link href="/">
-              <a className="btn btn-dark my-2">Seguir comprando</a>
+              <a className="btn add-to-cart my-2">Seguir comprando</a>
             </Link>
             
             <Link href={auth.user ? '#!' : '/signin'}>
-              <a className="btn btn-dark my-2" onClick={handlePayment}>Finalizar compra</a>
+              <a className="btn add-to-cart my-2" onClick={handlePayment}>Finalizar compra</a>
             </Link>
             
         </div>

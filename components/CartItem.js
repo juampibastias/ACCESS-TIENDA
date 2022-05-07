@@ -29,7 +29,7 @@ const CartItem = ({item, dispatch, cart}) => {
                 }
             </td>
 
-            <td  >
+            <td class="contador" >
                 <button className="btn btn-outline-secondary"
                 onClick={ () => dispatch(decrease(cart, item._id)) } 
                 disabled={item.quantity === 1 ? true : false} > - </button>

@@ -66,7 +66,7 @@ const Signin = () => {
             name="password" value={password} onChange={handleChangeInput} />
           </div>
           
-          <button type="submit" className="btn btn-dark w-100">Entrar</button>
+          <button type="submit" className="btn sign w-100">Entrar</button>
 
           <p className="my-2">
             No tienes una cuenta? <Link href="/register"><a style={{color: 'crimson'}}>Registrate ahora</a></Link>

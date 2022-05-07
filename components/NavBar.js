@@ -231,7 +231,7 @@ function NavBar() {
                         </li>
                         : loggedRouter()
                     }
-                    <ul class="social-collapse">
+                    <ul className="social-collapse">
                     <li className='icono-redes'>
                        <a href="#face" target="_blank"><img src='images/iconos-redes1.png' alt="iconos-redes" /></a> 
                     </li>
