@@ -293,12 +293,76 @@ body {
   width: auto;
 }
 
-.contenedor-carrito .contenedor-carro-envio .contenedor-envio {
-  width: 25%;
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal {
+  width: 100%;
 }
 
-.contenedor-carrito .contenedor-carro-envio .contenedor-envio h2 {
-  color: #534080;
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal h3 {
+  border-top: 1px solid #534080;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio {
+  background-color: rgba(83, 64, 128, 0.2);
+  padding: 0;
+  width: 100%;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio #accord-envio .accordion-item .accordion-header .accordion-button {
+  width: 100%;
+  background-color: #8268c1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: left;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0;
+  border: none;
+  line-height: 1;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio #accord-envio .accordion-item .accordion-header .accordion-button:focus {
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio #accord-envio .accordion-item .accordion-header .accordion-button:focus-visible {
+  border: none;
+  border-radius: 0;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio #accord-envio .accordion-item .accordion-header .accordion-button:hover {
+  background-color: #534080;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio #accord-envio .accordion-item .accordion-header .accordion-button:after {
+  content: 'v';
+  -webkit-transform: scaleX(1.1);
+          transform: scaleX(1.1);
+  font-size: lighter;
+  color: white;
+  margin-left: 2rem;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio #accord-envio .accordion-item .accordion-header .accordion-button h2 {
+  color: white;
+  padding: 0;
+  width: 70%;
+  margin: 1 auto;
+}
+
+.contenedor-carrito .contenedor-carro-envio .contenedor-envio-subtotal .contenedor-envio #accord-envio .accordion-item form {
+  text-align: left;
+  padding: 1rem;
 }
 
 .contenedor-carrito h1.title {
@@ -761,5 +825,17 @@ img {
 /* ----------- Products Manager ------------- */
 ul li a {
   color: white;
+}
+
+@media screen and (max-width: 991px) {
+  .contenedor-nosotros .contenedor-imagen {
+    height: auto;
+  }
+  .contenedor-nosotros .contenedor-texto {
+    width: 90%;
+  }
+  .contenedor-nosotros .contenedor-texto p {
+    font-size: 1.2rem;
+  }
 }
 /*# sourceMappingURL=globals.css.map */

@@ -7,6 +7,8 @@ import { getData, postData } from '../utils/fetchData'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import pibeDeFondo from '../public/images/pibeDeFondo.png'
+import { Accordion } from 'react-bootstrap'
+
 
 let itemMp;
 const Cart = () => {
@@ -105,6 +107,11 @@ const Cart = () => {
 
   }
   
+  //flechita toggle envio
+
+
+
+
   if( cart.length === 0 ) 
     return <Image className="img-responsive w-100" src={pibeDeFondo} alt="not empty"/>
 
@@ -145,43 +152,54 @@ const Cart = () => {
           </table>
         </div>
         </div>
-
-        <div className="col-md-4 my-3 text-right text-uppercase text-secondary contenedor-envio">
+            <div className="col-md-4 my-3 text-right text-uppercase text-secondary contenedor-envio-subtotal">
+            <div className="contenedor-envio">
+           <Accordion defaultActiveKey={0} id="accord-envio">
+          <Accordion.Item eventKey='0'>
+            <Accordion.Header id="accordion-button"> <h2>Datos de envio</h2></Accordion.Header>
+            <Accordion.Body>
             <form>
-              <h2>Datos de envio</h2>
-              <label htmlFor="address">Provincia</label>
-              <input type="text" name="provincia" id="provincia"
-              className="form-control mb-2" value={provincia}
-              onChange={e => setProvincia(e.target.value)} placeholder="Por ejemplo Mendoza..." />
+             
+             <label htmlFor="address">Provincia</label>
+             <input type="text" name="provincia" id="provincia"
+             className="form-control mb-2" value={provincia}
+             onChange={e => setProvincia(e.target.value)} placeholder="Por ejemplo Mendoza..." />
 
-              <label htmlFor="address">Ciudad</label>
-              <input type="text" name="ciudad" id="ciudad"
-              className="form-control mb-2" value={ciudad}
-              onChange={e => setCiudad(e.target.value)} placeholder="Por ejemplo Rivadavia..." />
+             <label htmlFor="address">Ciudad</label>
+             <input type="text" name="ciudad" id="ciudad"
+             className="form-control mb-2" value={ciudad}
+             onChange={e => setCiudad(e.target.value)} placeholder="Por ejemplo Rivadavia..." />
 
-              <label htmlFor="address">Dirección</label>
-              <input type="text" name="address" id="address"
-              className="form-control mb-2" value={address}
-              onChange={e => setAddress(e.target.value)} placeholder="ingrese su calle y número" />
+             <label htmlFor="address">Dirección</label>
+             <input type="text" name="address" id="address"
+             className="form-control mb-2" value={address}
+             onChange={e => setAddress(e.target.value)} placeholder="ingrese su calle y número" />
 
-              <label htmlFor="address">Código postal</label>
-              <input type="text" name="cp" id="cp"
-              className="form-control mb-2" value={cp}
-              onChange={e => setCp(e.target.value)} placeholder="Por ejemplo 5560" />
-              
-              <label htmlFor="mobile">Numero de telefono con Whatsapp</label>
-              <input type="text" name="mobile" id="mobile"
-              className="form-control mb-2" value={mobile}
-              onChange={e => setMobile(e.target.value)} placeholder="+54 9 xxxxxxxxx" />
-              
-              <label htmlFor="coment">Comentario</label>
-              <input type="text" name="coment" id="coment" placeholder='entre que calles, horario de visita, etc.'
-              className="form-control mb-2" value={coment}
-              onChange={e => setComent(e.target.value)} />
-            </form>
+             <label htmlFor="address">Código postal</label>
+             <input type="text" name="cp" id="cp"
+             className="form-control mb-2" value={cp}
+             onChange={e => setCp(e.target.value)} placeholder="Por ejemplo 5560" />
+             
+             <label htmlFor="mobile">Numero de telefono con Whatsapp</label>
+             <input type="text" name="mobile" id="mobile"
+             className="form-control mb-2" value={mobile}
+             onChange={e => setMobile(e.target.value)} placeholder="+54 9 xxxxxxxxx" />
+             
+             <label htmlFor="coment">Comentario</label>
+             <input type="text" name="coment" id="coment" placeholder='entre que calles, horario de visita, etc.'
+             className="form-control mb-2" value={coment}
+             onChange={e => setComent(e.target.value)} />
+           </form>
+            </Accordion.Body>
+            </Accordion.Item>
+           </Accordion>
+         
 
             <h3>Total: <span className="text-danger">${total}</span></h3>
             
+           
+            
+        </div>
             <Link href="/">
               <a className="btn add-to-cart my-2">Seguir comprando</a>
             </Link>
@@ -189,8 +207,8 @@ const Cart = () => {
             <Link href={auth.user ? '#!' : '/signin'}>
               <a className="btn add-to-cart my-2" onClick={handlePayment}>Finalizar compra</a>
             </Link>
-            
-        </div>
+            </div>
+       
       </div>
       </div>
     )

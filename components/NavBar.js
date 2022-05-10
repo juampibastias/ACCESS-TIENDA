@@ -73,7 +73,7 @@ function NavBar() {
         <header>
         <nav className="navbar bootless-margin navbar-expand-lg navbar-light bg-dark text-light">
             <Link className="text-center"  href="/home">
-                <a className="navbar-brand text-center"><Image src={logo} alt='logo-access' /></a>
+                <a className=" text-center"><Image src={logo} alt='logo-access' /></a>
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -157,7 +157,7 @@ function NavBar() {
                     <li className="nav-item">
                         <Link href="/">
                             <a style={{color:'white'}} className={"nav-link" + isActive('/')}>
-                                TIENDA
+                                TIENDA VIRTUAL
                             </a>
                         </Link>
                     </li>
@@ -196,7 +196,7 @@ function NavBar() {
                     <li className="nav-item">
                         <Link href="/">
                             <a style={{color:'white'}} className={"nav-link" + isActive('/')}>
-                                TIENDA
+                                TIENDA VIRTUAL
                             </a>
                         </Link>
                     </li>
