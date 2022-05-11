@@ -152,7 +152,8 @@ const Cart = () => {
           </table>
         </div>
         </div>
-            <div className="col-md-4 my-3 text-right text-uppercase text-secondary contenedor-envio-subtotal">
+            <div className="col-md-4 my-3  text-uppercase  contenedor-envio-subtotal">
+              <h2>RESUMEN</h2>
             <div className="contenedor-envio">
            <Accordion defaultActiveKey={0} id="accord-envio">
           <Accordion.Item eventKey='0'>

@@ -1,4 +1,6 @@
-import React from 'react'
+
+import React, { useContext } from 'react'
+
 
 export const Novedades = () => {
   return (
@@ -18,14 +20,22 @@ export const Novedades = () => {
 
   <div className="">
     <div className=" lista-novedades">
-      <div className="novedad  bg-danger">
+      <div className="novedad-item  ">
         <img
           className="novedad-imagen"
           src="images/Auricular-jbl.png"
           alt=""
         />
+        <div className="novedad-title">
+          <h3 className="novedad-title-text">aca va el item.title o</h3>
+          <div className='novedad-text-link'>
+            <p> lorem </p>
+           <a href='#'> link</a>
+          </div>
+        </div>
+
       </div>
-      <div className="novedad  bg-dark">
+      {/* <div className="novedad  bg-dark">
         <img
           className="novedad-imagen"
           src="images/IMPRESORA-HP.png"
@@ -45,23 +55,23 @@ export const Novedades = () => {
           src="images/pibe-de-fondo.png"
           alt=""
         />
-      </div>
+      </div> */}
     </div>
   </div>
 {/* 
   <!-- NOVEDADES POR DENTRO --> */}
 {/* 
   <!-- NAV DE NOVEDADES Y PAGINACION --> */}
-
+{/* 
   <nav className="navbar navbar-light bg-light">
     <div className="container-fluid">
       <a className="navbar-brand" href="#">INICIO / NOVEDADES ORDENAR POR: PRECIOS {'>>'} 1 2 3</a
       >
     </div>
-  </nav>
+  </nav> */}
 
   {/* <!-- NOVEDADES DESARROLLO DE INFO --> */}
-  <div className="container-fluid pt-2">
+  {/* <div className="container-fluid pt-2">
     <div className="card container-fluid" style={{width:90+"%"}}>
       <img
         src="images/pibe-de-fondo.png"
@@ -77,10 +87,10 @@ export const Novedades = () => {
         <a href="#" className="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-  </div>
+  </div> */}
 
   {/* <!-- NOVEDADES DE NUEVOS PRODUCTOS CON LINK A LA TIENDA --> */}
-  <div className="slider">
+  {/* <div className="slider">
     <div
       id="carouselExampleSlidesOnly"
       className="carousel slide"
@@ -119,7 +129,7 @@ export const Novedades = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
 
     </div>
   )

@@ -12,6 +12,9 @@ const Filter = ({state}) => {
 
     const router = useRouter()
 
+    useEffect(() => {
+        
+    },[])
 
     const handleCategory = (e) => {
         setCategory(e.target.value)
@@ -28,12 +31,12 @@ const Filter = ({state}) => {
     },[search])
 
     return (
-        <div className="input-group">
-            <div className="input-group-prepend col-md-2 px-0 mt-2">
+        <div className="contenedor-filtros">
+            <div className="  px-0 categorias ">
                 <select className="custom-select text-capitalize"
                 value={category} onChange={handleCategory}>
-
-                    <option value="all">Todos</option>
+                    <option value="all"> categorias</option>
+                    <option value="all">TODO</option>
 
                     {
                         categories.map(item => (
@@ -41,15 +44,19 @@ const Filter = ({state}) => {
                         ))
                     }
                 </select>
+               
             </div>
 
-            <form autoComplete="off" className="mt-2 col-md-8 px-0">
-                <input type="text" className="form-control" list="title_product"
+            <form autoComplete="off" className=" col-md-4 px-0 buscador-artic">
+                <label>
+                <input type="text" placeholder='Buscá tu producto' className="form-control" list="title_product"
                 value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} />
+                </label>
+                
             </form>
 
-            <div className="input-group-prepend col-md-2 px-0 mt-2">
-                <select className="custom-select text-capitalize"
+            <div className="   selector-sort">
+                <select className="custom-select text-capitalize "
                 value={sort} onChange={handleSort}>
 
                      <option value="-createdAt">Ultimos publicados</option>
