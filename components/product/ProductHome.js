@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useContext } from 'react'
 import { DataContext } from '../../store/GlobalState'
-import { addToCart } from '../../store/Actions'
 
 const ProductHome = ({product, handleCheck}) => {
     const { state, dispatch } = useContext(DataContext)

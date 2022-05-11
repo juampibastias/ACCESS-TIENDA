@@ -11,8 +11,8 @@ import {DataContext} from '../store/GlobalState'
 import { getData } from '../utils/fetchData'
 import ProductHome from '../components/product/ProductHome'
 import {useRouter} from 'next/router'
-import Filter from '../components/Filter'
 import MiniCartWidget from '../components/widget/minicart'
+
 
 
 const Home = (props) => {
@@ -116,6 +116,7 @@ const Home = (props) => {
           Mostrar más
         </button>
       }
+
     </div>
   )
 }
