@@ -14,7 +14,7 @@ const DetailNovedades = (props) => {
         style={{height: '600px'}}/>
 
         <div className="row mx-0">
-        <h1>{novedades.name}</h1>
+        <h2>{novedades.name}</h2>
         </div>
         <div className="row mx-0">
         {novedades.detail}
