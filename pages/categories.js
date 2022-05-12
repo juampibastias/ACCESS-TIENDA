@@ -16,7 +16,7 @@ const Categories = () => {
         if(auth.user.role !== 'admin')
         return dispatch({type: 'NOTIFY', payload: {error: 'Autenticación inválida.'}})
 
-        if(!name) return dispatch({type: 'NOTIFY', payload: {error: 'El nombre no puede dejarse en blanco.'}})
+        if(!name) return dispatch({type: 'NOTIFY', payload: {error: 'El nombre no puede quedar en blanco.'}})
 
         dispatch({type: 'NOTIFY', payload: {loading: true}})
 

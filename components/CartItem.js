@@ -20,13 +20,8 @@ const CartItem = ({item, dispatch, cart}) => {
 
             <td  className='table-price'>
                 
-
-                <h6 >${item.quantity * item.price}</h6>
-                {
-                    item.inStock > 0
-                    ? <p className="mb-1 text-primary">En Stock: {item.inStock}</p>
-                    : <p className="mb-1 text-danger">Sin Stock</p>
-                }
+            <h3> ${item.price}</h3>
+               
             </td>
 
             <td className="contador" >
@@ -42,11 +37,16 @@ const CartItem = ({item, dispatch, cart}) => {
             </td>
 
             <td className="table-total" >
-                <h3> ${item.price}</h3>
+                
+                <h6 >${item.quantity * item.price}</h6>
+                {
+                    item.inStock > 0
+                    ? <p className="mb-1 text-primary"></p>
+                    : <p className="mb-1 text-danger">Sin Stock</p>
+                }
                
             </td>
             <td className="table-edit" >
-            <i className='far fa-edit text-primary' style={{fontSize: '18px'}}></i>
             <i className="far fa-trash-alt text-danger" aria-hidden="true" 
                 style={{fontSize: '18px'}} data-toggle="modal" data-target="#exampleModal"
                 onClick={() => dispatch({
