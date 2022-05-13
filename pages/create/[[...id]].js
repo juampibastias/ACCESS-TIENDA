@@ -187,7 +187,7 @@ const ProductsManager = () => {
                             images.map((img, index) => (
                                 <div key={index} className="file_img my-1">
                                     
-                                    <img src={img.url ? img.url : URL.createObjectURL(img)} />                                   alt="imagen" className="img-thumbnail rounded" />
+                                    <img src={img.url ? img.url : URL.createObjectURL(img)} alt="imagen" className="img-thumbnail rounded" />                       
 
                                      <span onClick={() => deleteImage(index)}>X</span>
                                 </div>

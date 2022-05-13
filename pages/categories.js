@@ -54,7 +54,7 @@ const Categories = () => {
 
                 <button className="btn btn-secondary ml-1"
                 onClick={createCategory}>
-                    {id ? "Update": "Create"}
+                    {id ? "Actualizar": "Crear"}
                 </button>
             </div>
 
