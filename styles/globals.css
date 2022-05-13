@@ -540,50 +540,100 @@ nav[aria-label="breadcrumb"] {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 3rem auto;
+  width: 90%;
 }
 
 .contenedor-novedades .card {
-  width: 400px;
+  width: 430px;
   height: 300px;
   margin: 2rem;
-  position: relative;
+  border: none;
 }
 
 .contenedor-novedades .card .card-img-top {
   width: 100%;
-  height: 100%;
+  height: 65%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
 
-.contenedor-novedades .card .card-body {
-  position: absolute;
-  bottom: 0;
+.contenedor-novedades .card .card-body-custom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: rgba(255, 255, 255, 0.5);
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
+  padding-bottom: 15px;
+  height: 35%;
 }
 
-.contenedor-novedades .card .card-body:hover {
+.contenedor-novedades .card .card-body-custom h5,
+.contenedor-novedades .card .card-body-custom p {
+  padding: 0;
+  margin: 0;
+}
+
+.contenedor-novedades .card .card-body-custom:hover {
   background-color: white;
 }
 
-.contenedor-novedades .card .card-body .card-title {
+.contenedor-novedades .card .card-body-custom .card-title {
   font-weight: 600;
+  padding: 0.2rem 0;
 }
 
-.contenedor-novedades .card .botonera {
+.contenedor-novedades .card .card-body-custom .card-text {
+  width: 85%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contenedor-novedades .card .card-body-custom .botonera {
   background-color: #534080;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  border-radius: 5px;
+  border: 2px solid white;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.contenedor-novedades .card .botonera .btn {
+.contenedor-novedades .card .card-body-custom .botonera:hover {
+  background-color: #351c6e;
+}
+
+.contenedor-novedades .card .card-body-custom .botonera .btn-custom {
   color: white;
+  font-weight: bolder;
+  padding: 8px;
+  font-size: 1.5rem;
+  line-height: 0.5;
+}
+
+.contenedor-novedades .card .card-body-custom .botonera .btn-custom:hover {
+  text-decoration: none;
 }
 
 .contenedor-sucursales {

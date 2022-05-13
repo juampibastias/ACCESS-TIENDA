@@ -4,23 +4,32 @@ import { getData } from "../../utils/fetchData";
 
 const DetailNovedades = (props) => {
   const [novedades] = useState(props.novedad)
+
+  // attr: images,name,descrip
   return (
-    <div className="row detail_novedades">
+    <div className="contenedor-detallesnovedades">
+       <nav aria-label="breadcrumb">
+  <ol className="breadcrumb">
+    <li className="breadcrumb-item"><a href="home">Inicio</a></li>
+    <li className="breadcrumb-item " aria-current="page">Novedades</li>
+    <li className="breadcrumb-item active" aria-current="page">{novedades.name}</li>
+  </ol>
+</nav>
       <Head>
         <title>Detalle Novedades</title>
       </Head>
-      <div className="col-md-6">
-        <img src={novedades.images[0].url} alt={novedades.images[0].url} className="d-block img-thumbnail rounded mt-4 w-100"
-        style={{height: '600px'}}/>
+      <div className="">
+        <img src={novedades.images[0].url} alt={novedades.images[0].url} className=""
+        />
 
-        <div className="row mx-0">
+        <div className=" ">
         <h2>{novedades.name}</h2>
         </div>
-        <div className="row mx-0">
-        {novedades.detail}
+        <div className="">
+        {novedades.descrip}
         </div>
       </div>
-      <div className="col-md-6"></div>
+      <div className=""></div>
 
     </div>
   );

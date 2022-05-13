@@ -463,29 +463,43 @@ nav[aria-label="breadcrumb"] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 3rem auto;
-
+    width: 90%;
 
 
     .card {
-        width: 400px;
+        width: 430px;
         height: 300px;
         margin: 2rem;
-        position: relative;
+        border: none;
+
+
+
 
         .card-img-top {
             width: 100%;
-            height: 100%;
+            height: 65%;
             object-fit: cover;
             object-position: center;
         }
 
-        .card-body {
-            position: absolute;
-            bottom: 0;
+        .card-body-custom {
+            display: flex;
+            position: relative;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
             background-color: rgba($color: #ffffff, $alpha: 0.5);
             transition: background-color 0.2s ease-in-out;
+            padding-bottom: 15px;
+            height: 35%;
+
+            h5,
+            p {
+                padding: 0;
+                margin: 0;
+            }
 
             &:hover {
                 background-color: rgba($color: #ffffff, $alpha: 1);
@@ -493,20 +507,54 @@ nav[aria-label="breadcrumb"] {
 
             .card-title {
                 font-weight: 600;
+                padding: 0.2rem 0;
             }
 
-            .card-text {}
+            .card-text {
+                width: 85%;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                text-overflow: ellipsis;
 
+
+
+            }
+
+            .botonera {
+                background-color: #534080;
+                position: absolute;
+                right: 15px;
+                bottom: 0;
+                border-radius: 5px;
+                border: 2px solid white;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: #351c6e;
+
+                }
+
+                .btn-custom {
+                    color: white;
+                    font-weight: bolder;
+                    padding: 8px;
+                    font-size: 1.5rem;
+
+                    line-height: 0.5;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+
+                }
+            }
 
         }
 
-        .botonera {
-            background-color: #534080;
 
-            .btn {
-                color: white;
-            }
-        }
     }
 
 }
