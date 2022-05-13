@@ -111,6 +111,7 @@ const NovedadesManager = () => {
             <Head>
                 <title>Administración de Novedades</title>
             </Head>
+            <h3>NOVEDADES MANAGER</h3>
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
                     

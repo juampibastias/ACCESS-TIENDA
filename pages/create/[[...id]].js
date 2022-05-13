@@ -116,6 +116,9 @@ const ProductsManager = () => {
             <Head>
                 <title>Administración de productos</title>
             </Head>
+
+            <h3>PRODUCTOS MANAGER</h3>
+
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
                     
