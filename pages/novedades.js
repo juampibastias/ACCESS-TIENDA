@@ -6,7 +6,7 @@ const Novedades = (props) => {
   const [novedades, setNovedades] = useState(props.novedades)
     
   return (
-    <div>
+    <div className="contenedor-novedades">
        {
       novedades.length === 0
       ? <h2>Sin novedades</h2>

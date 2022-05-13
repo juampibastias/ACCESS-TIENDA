@@ -540,39 +540,50 @@ nav[aria-label="breadcrumb"] {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.contenedor-novedades .lista-novedades {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 70%;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
-.contenedor-novedades .lista-novedades .novedad-item {
+.contenedor-novedades .card {
   width: 400px;
-  height: 400px;
+  height: 300px;
   margin: 2rem;
+  position: relative;
 }
 
-.contenedor-novedades .lista-novedades .novedad-item img {
+.contenedor-novedades .card .card-img-top {
   width: 100%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.contenedor-novedades .card .card-body {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.contenedor-novedades .card .card-body:hover {
+  background-color: white;
+}
+
+.contenedor-novedades .card .card-body .card-title {
+  font-weight: 600;
+}
+
+.contenedor-novedades .card .botonera {
+  background-color: #534080;
+}
+
+.contenedor-novedades .card .botonera .btn {
+  color: white;
 }
 
 .contenedor-sucursales {
