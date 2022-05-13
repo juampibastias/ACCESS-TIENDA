@@ -15,9 +15,11 @@ const Home = (props) => {
   const [isCheck, setIsCheck] = useState(false)
   const [page, setPage] = useState(1)
   const router = useRouter()
+  
 
   const {state, dispatch} = useContext(DataContext)
   const {auth} = state
+
 
   useEffect(() => {
     setProducts(props.products)
@@ -107,6 +109,7 @@ const Home = (props) => {
           Mostrar más
         </button>
       }
+      
     
     </div>
   )
@@ -130,5 +133,6 @@ export async function getServerSideProps({query}) {
     }, // will be passed to the page component as props
   }
 }
+
 
 export default Home

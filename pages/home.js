@@ -12,7 +12,8 @@ import { getData } from '../utils/fetchData'
 import ProductHome from '../components/product/ProductHome'
 import {useRouter} from 'next/router'
 import MiniCartWidget from '../components/widget/minicart'
-
+/* import NovedadesHome from "../components/Novedad/NovedadesHome"
+ */
 
 
 const Home = (props) => {
@@ -25,6 +26,8 @@ const Home = (props) => {
   const {state, dispatch} = useContext(DataContext)
   const {auth} = state
 
+/*   const [novedades, setNovedades] = useState(props.novedades)
+ */
   useEffect(() => {
     setProducts(props.products)
   },[props.products])
@@ -83,7 +86,8 @@ const Home = (props) => {
       </Carousel>
 
       <MiniCartWidget />
-
+{/*       <NovedadesHome />
+ */}
       {
         auth.user && auth.user.role === 'admin' &&
         <div className="delete_all btn btn-danger mt-2" style={{marginBottom: '-10px'}}>
@@ -116,6 +120,13 @@ const Home = (props) => {
           Mostrar más
         </button>
       }
+       {/* {
+      novedades.length === 0
+      ? <h2>Sin novedades</h2>
+      : novedades.map(novedad => (
+        <NovedadesItem key={novedad._id} novedad={novedad} />
+      ))
+    } */}
 
     </div>
   )
@@ -134,7 +145,7 @@ export async function getServerSideProps({query}) {
     props: {
       products: res.products,
       result: res.result
-    }, // will be passed to the page component as props
+    },  // will be passed to the page component as props
   }
 }
 
