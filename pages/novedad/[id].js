@@ -4,6 +4,7 @@ import { getData } from "../../utils/fetchData";
 
 const DetailNovedades = (props) => {
   const [novedades] = useState(props.novedad)
+  
   return (
     <div className="row detail_novedades">
       <Head>
@@ -19,9 +20,10 @@ const DetailNovedades = (props) => {
         <div className="row mx-0">
         {novedades.detail}
         </div>
+        <div className="row mx-0">
+        {novedades.category}
+        </div>
       </div>
-      <div className="col-md-6"></div>
-
     </div>
   );
 };

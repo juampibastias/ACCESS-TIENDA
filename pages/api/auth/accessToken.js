@@ -8,13 +8,13 @@ connectDB()
 export default async (req, res) => {
     try{
         const rf_token = req.cookies.refreshtoken;
-        if(!rf_token) return res.status(400).json({err: 'Please login now!'})
+        if(!rf_token) return res.status(400).json({err: '¡Inicia sesión ahora!'})
 
         const result = jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET)
-        if(!result) return res.status(400).json({err: 'Your token is incorrect or has expired.'})
+        if(!result) return res.status(400).json({err: 'Su contraseña es incorrecta o ha caducado.'})
 
         const user = await Users.findById(result.id)
-        if(!user) return res.status(400).json({err: 'User does not exist.'})
+        if(!user) return res.status(400).json({err: 'El usuario no existe.'})
 
         const access_token = createAccessToken({id: user._id})
         res.json({

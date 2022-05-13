@@ -17,6 +17,7 @@ const ProductsManager = () => {
     const [product, setProduct] = useState(initialState)
     const {title, price, inStock, description, content, category} = product
 
+
     const [images, setImages] = useState([])
 
     const {state, dispatch} = useContext(DataContext)
@@ -101,12 +102,13 @@ const ProductsManager = () => {
         let res;
         if(onEdit){
             res = await putData(`product/${id}`, {...product, images: [...imgOldURL, ...media]}, auth.token)
+            
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
         }else{
             res = await postData('product', {...product, images: [...imgOldURL, ...media]}, auth.token)
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
         }
-
+        console.log(res)
         return dispatch({type: 'NOTIFY', payload: {success: res.msg}})
         
     }
