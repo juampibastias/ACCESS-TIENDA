@@ -4,12 +4,7 @@ import { getData } from "../../utils/fetchData";
 
 const DetailNovedades = (props) => {
   const [novedades] = useState(props.novedad)
-<<<<<<< HEAD
   
-=======
-
-  // attr: images,name,descrip
->>>>>>> 9a4edf249cf1adf473803a5b060ae4b1fffb5eed
   return (
     <div className="contenedor-detallesnovedades">
        <nav aria-label="breadcrumb">
