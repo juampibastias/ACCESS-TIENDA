@@ -27,7 +27,7 @@ const DetailNovedades = (props) => {
         <div className="">
         {novedades.descrip}
         </div>
-        <div className="row mx-0">
+        <div hidden className="row mx-0">
         {novedades.category}
         </div>
       </div>
