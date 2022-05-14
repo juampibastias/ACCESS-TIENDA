@@ -7,7 +7,7 @@ const NovedadesItem = ({novedad}) =>{
       <>
 
       <Link href={`novedad/${novedad._id}`}>
-      <a className="btn">Ir</a>
+      <a className="btn-custom">{">"}</a>
       </Link>
 
       </>
@@ -17,13 +17,14 @@ const NovedadesItem = ({novedad}) =>{
     return(
         <div className="card">
         <img className="card-img-top" src={novedad.images[0].url} alt={novedad.images[0].url} />
-        <div className="card-body">
+        <div className="card-body-custom">
           <h5 className="card-title">{novedad.name}</h5>
           <p className="card-text">{novedad.descrip}</p>
-        </div>
-        <div className="botonera">
+          <div className="botonera">
           {novedadLink()}
         </div>
+        </div>
+        
       </div>
     )
 }
