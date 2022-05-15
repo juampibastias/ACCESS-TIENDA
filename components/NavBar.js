@@ -5,6 +5,7 @@ import {DataContext} from '../store/GlobalState'
 import Cookie from 'js-cookie'
 import Image from 'next/image'
 import logo from '../public/images/logo.png'
+import MiniCartWidget from './widget/minicart'
 
 function NavBar() {
     const router = useRouter()
@@ -75,11 +76,12 @@ function NavBar() {
 
     return (
         <header>
+            <MiniCartWidget count={cart.length} />
         <nav className="navbar bootless-margin navbar-expand-lg navbar-light bg-dark text-light">
             <Link className="text-center"  href="/home">
                 <a className=" text-center"><Image src={logo} alt='logo-access' /></a>
             </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse justify-content-end" >
@@ -89,16 +91,8 @@ function NavBar() {
                         <Link href="/cart">
                             <a style={{color:'white'}} className={"nav-link" + isActive('/cart')}>
                                 <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
-                                    <span className="position-absolute"
-                                    style={{
-                                        padding: '3px 6px',
-                                        background: '#ed143dc2',
-                                        borderRadius: '50%',
-                                        top: '-10px',
-                                        right: '-10px',
-                                        color: 'white',
-                                        fontSize: '14px'
-                                    }}>
+                                    <span className="position-absolute cartitems-counter"
+                                   >
                                         {cart.length}
                                     </span>
                                 </i> CARRITO

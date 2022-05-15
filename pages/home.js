@@ -70,7 +70,7 @@ const Home = (props) => {
   }
   return (
     <div className='contenedor-home'>
-      <Carousel>
+      <Carousel prevLabel="" nextLabel=''>
         <Carousel.Item>
           <Image className="d-block w-100" src={banner1} alt="First slide" />
           
@@ -85,7 +85,7 @@ const Home = (props) => {
         </Carousel.Item>
       </Carousel>
 
-      <MiniCartWidget />
+      
 {/*       <NovedadesHome />
  */}
       {

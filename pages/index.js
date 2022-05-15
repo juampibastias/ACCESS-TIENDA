@@ -68,7 +68,7 @@ const Home = (props) => {
       <Head>
         <title>ACCESS - TIENDA</title>
       </Head>
-    <MiniCartWidget />
+    
     <nav aria-label="breadcrumb">
   <ol className="breadcrumb">
     <li className="breadcrumb-item"><a href="home">Inicio</a></li>
