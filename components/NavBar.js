@@ -51,7 +51,7 @@ function NavBar() {
 
     const loggedRouter = () => {
         return(
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown usermenu">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src={auth.user.avatar} alt={auth.user.avatar} 
                     style={{

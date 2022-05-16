@@ -53,17 +53,17 @@ const Signin = () => {
           <title>Ingrese a la página</title>
         </Head>
 
-        <form className="mx-auto my-4" style={{maxWidth: '500px'}} onSubmit={handleSubmit}>
+        <form className="mx-auto my-4 signin-form" style={{maxWidth: '500px'}} onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email</label>
             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            name="email" value={email} onChange={handleChangeInput} />
+            name="email" placeholder='Correo electrónico' value={email} onChange={handleChangeInput} required />
             <small id="emailHelp" className="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Contraseña</label>
             <input type="password" className="form-control" id="exampleInputPassword1"
-            name="password" value={password} onChange={handleChangeInput} />
+            name="password" value={password} onChange={handleChangeInput} required />
           </div>
           
           <button type="submit" className="btn sign w-100">Entrar</button>
