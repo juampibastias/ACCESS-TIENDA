@@ -6,6 +6,7 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
     const {auth, orders} = state
 
     const handleDelivered = (order) => {
+        
         dispatch({type: 'NOTIFY', payload: {loading: true}})
 
         patchData(`order/delivered/${order._id}`, null, auth.token)
@@ -53,23 +54,6 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                                 onClick={() => handleDelivered(order)}>
                                     Marcar como entregado
                                 </button>
-                            }
-                            
-                        </div>
-
-                        <h3>Forma de pago</h3>
-                        {
-                            order.method && <h6>Método: <em>{order.method}</em></h6>
-                        }
-                        
-                        {
-                            order.paymentId && <p>Pago: <em>{order.paymentId}</em></p>
-                        }
-                        
-                        <div className={`alert ${order.paid ? 'alert-success' : 'alert-danger'}
-                        d-flex justify-content-between align-items-center`} role="alert">
-                            {
-                                order.paid ? `Paid on ${order.dateOfPayment}` : 'Pendiente'
                             }
                             
                         </div>

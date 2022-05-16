@@ -108,7 +108,7 @@ const ProductsManager = () => {
             res = await postData('product', {...product, images: [...imgOldURL, ...media]}, auth.token)
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
         }
-        console.log(res)
+        
         return dispatch({type: 'NOTIFY', payload: {success: res.msg}})
         
     }

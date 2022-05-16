@@ -63,7 +63,7 @@ const Cart = () => {
   },[callback])
 
   const handlePayment = async () => {
-    if(!address || !mobile || !coment)
+    if(!provincia || !ciudad ||!address || !mobile || !coment || !cp)
     return dispatch({ type: 'NOTIFY', payload: {error: 'Por favor, complete los datos de envío.'}})
 
     let newCart = [];
@@ -77,7 +77,7 @@ const Cart = () => {
         price: item.price,
         quantity: item.quantity 
       })
-      console.log(itemMp)
+     
     }
     
     if(newCart.length < cart.length){
@@ -161,12 +161,12 @@ const Cart = () => {
             <Accordion.Body>
             <form>
              
-             <label htmlFor="address">Provincia</label>
+             <label htmlFor="provincia">Provincia</label>
              <input type="text" name="provincia" id="provincia"
              className="form-control mb-2" value={provincia}
              onChange={e => setProvincia(e.target.value)} placeholder="Por ejemplo Mendoza..." />
 
-             <label htmlFor="address">Ciudad</label>
+             <label htmlFor="ciudad">Ciudad</label>
              <input type="text" name="ciudad" id="ciudad"
              className="form-control mb-2" value={ciudad}
              onChange={e => setCiudad(e.target.value)} placeholder="Por ejemplo Rivadavia..." />
@@ -176,7 +176,7 @@ const Cart = () => {
              className="form-control mb-2" value={address}
              onChange={e => setAddress(e.target.value)} placeholder="ingrese su calle y número" />
 
-             <label htmlFor="address">Código postal</label>
+             <label htmlFor="cp">Código postal</label>
              <input type="text" name="cp" id="cp"
              className="form-control mb-2" value={cp}
              onChange={e => setCp(e.target.value)} placeholder="Por ejemplo 5560" />

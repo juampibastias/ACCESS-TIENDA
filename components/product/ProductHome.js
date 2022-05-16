@@ -14,7 +14,7 @@ const ProductHome = ({product, handleCheck}) => {
                 style={{marginLeft: '5px', flex: 1}}
                 disabled={product.inStock === 0 ? true : false} 
                 onClick={()=> location.href="http://localhost:3000/?search=all"} >
-                     <p className="small">Ir a la tienda</p>${product.price}
+                     <p className="small"></p>${product.price}
                 </button>
             </>
         )
