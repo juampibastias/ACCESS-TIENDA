@@ -25,7 +25,7 @@ function NavBar() {
         Cookie.remove('refreshtoken', {path: 'api/auth/accessToken'})
         localStorage.removeItem('firstLogin')
         dispatch({ type: 'AUTH', payload: {} })
-        dispatch({ type: 'NOTIFY', payload: {success: '¡Desconectado!'} })
+        dispatch({ type: 'NOTIFY', payload: {success: '¡Cerraste tu sesión correctamente!'} })
         return router.push('/')
     }
 
