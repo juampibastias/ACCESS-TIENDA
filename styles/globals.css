@@ -207,7 +207,7 @@ body {
 }
 
 .links-list-vertical {
-  display: block;
+  display: none;
   width: 100%;
   background-color: #534080;
   padding: 0;
@@ -422,6 +422,11 @@ body {
 
 .contenedor-carrito h1.title {
   color: #534080;
+}
+
+.contenedor-carrito .table {
+  min-width: 600px;
+  overflow-x: scroll;
 }
 
 .contenedor-carrito .table td {
@@ -1448,6 +1453,9 @@ ul li a {
   .contenedor-carrito thead th {
     color: white;
     font-weight: 300;
+  }
+  .links-list-vertical {
+    display: block;
   }
 }
 /*# sourceMappingURL=globals.css.map */

@@ -180,7 +180,7 @@ $color-2-2:rgb(130, 104, 193);
 }
 
 .links-list-vertical {
-    display: block;
+    display: none;
     width: 100%;
     background-color: #534080;
     padding: 0;
@@ -376,6 +376,9 @@ $color-2-2:rgb(130, 104, 193);
     }
 
     .table {
+        min-width: 600px;
+        overflow-x: scroll;
+
         td {
             padding: 0.65rem;
             vertical-align: middle;
@@ -1339,6 +1342,10 @@ ul li a {
                 font-weight: 300;
             }
         }
+    }
+
+    .links-list-vertical {
+        display: block;
     }
 
 }
