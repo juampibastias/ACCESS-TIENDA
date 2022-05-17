@@ -111,13 +111,13 @@ function NavBar() {
                         : loggedRouter()
                     }
                     <li className='icono-redes'>
-                       <a href="#face" target="_blank"><img src='images/iconos-redes1.png' alt="iconos-redes" /></a> 
+                       <a href="https://www.facebook.com/accessvirtual/" target="_blank"><img src='images/iconos-redes1.png' alt="iconos-redes" /></a> 
                     </li>
                     <li className='icono-redes'>
-                       <a href="#whatsapp"  target="_blank"><img src='images/iconos-redes2.png' alt="iconos-redes" /></a> 
+                       <a href="https://wa.me/5492634617852"  target="_blank"><img src='images/iconos-redes2.png' alt="iconos-redes" /></a> 
                     </li>
                     <li className='icono-redes'>
-                       <a href="#instagram"  target="_blank"><img src='images/iconos-redes3.png' alt="iconos-redes" /></a> 
+                       <a href="https://www.instagram.com/access.virtual/"  target="_blank"><img src='images/iconos-redes3.png' alt="iconos-redes" /></a> 
                     </li>
                 </ul>
             </div>
