@@ -119,7 +119,7 @@ const ProductsManager = () => {
                 <title>Administración de productos</title>
             </Head>
 
-            <h3>PRODUCTOS MANAGER</h3>
+            <h3 className='text-center my-5'>PRODUCTOS MANAGER</h3>
 
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
