@@ -366,6 +366,19 @@ $color-2-2:rgb(130, 104, 193);
                     }
 
                 }
+
+                .contenedor-subtotal {
+                    background-color: white;
+                    border-top: 2px solid black;
+                    border-bottom: 2px solid black;
+
+                    .subtotal-item {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
             }
         }
 
@@ -468,6 +481,56 @@ $color-2-2:rgb(130, 104, 193);
     }
 }
 
+
+//SERVICIOS
+
+.contenedor-servicios {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 2rem 0;
+    h1{
+        text-align: center;
+    }
+
+    .servicio-items {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+
+        .servicio-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 1px solid grey;
+            justify-content: center;
+            width: 400px;
+            background-color: $color-2;
+            padding: 1rem 0;
+            margin: 1rem;
+           
+            
+
+            img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                
+            }
+
+            .text {
+                margin-left: 1rem;
+                display: block;
+                color: white;
+            }
+        }
+    }
+}
+
 //__________
 
 //FOOTER
@@ -517,9 +580,18 @@ footer {
                     width: 80%;
                     color: white;
 
+                    a {
+                        &:hover {
+                            color: white;
+                        }
+                    }
                 }
             }
         }
+    }
+
+    .copyright-footer {
+        color: white;
     }
 }
 
@@ -634,6 +706,32 @@ nav[aria-label="breadcrumb"] {
 
     }
 
+}
+
+.contenedor-novedad {
+    display: flex;
+    flex-direction: row;
+    margin: 2rem 0;
+
+    .contenedor-novedad-texto {
+        margin-left: 1.5rem;
+
+        width: 45%;
+
+        .title {
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: $color-2;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .desc {
+            margin-top: 0.5rem;
+        }
+    }
 }
 
 //Sucursales

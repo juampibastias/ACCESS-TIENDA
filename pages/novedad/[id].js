@@ -17,19 +17,21 @@ const DetailNovedades = (props) => {
       <Head>
         <title>Detalle Novedades</title>
       </Head>
-      <div className="">
+      <div className="contenedor-novedad">
         <img src={novedades.images[0].url} alt={novedades.images[0].url} className=""
         />
 
-        <div className=" ">
+      <div className="contenedor-novedad-texto">
+      <div className="title">
         <h2>{novedades.name}</h2>
         </div>
-        <div className="">
+        <div className="desc">
         {novedades.descrip}
         </div>
         <div hidden className="row mx-0">
         {novedades.category}
         </div>
+      </div>
       </div>
     </div>
   );
