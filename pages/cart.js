@@ -267,7 +267,16 @@ const Cart = () => {
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
-
+            <div className="contenedor-subtotal">
+              <div className="subtotal-item">
+              <h4>Articulos</h4>
+              <h4>$ {total}</h4>
+              </div>
+              <div className="subtotal-item">
+              <h4>Envio</h4>
+              <h4>$ {0}</h4>
+              </div>
+            </div>
             <h3>
               Total: <span className="text-danger">${total}</span>
             </h3>
