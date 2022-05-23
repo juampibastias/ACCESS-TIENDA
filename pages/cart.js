@@ -88,10 +88,11 @@ const Cart = () => {
 
       itemMpJson = JSON.stringify(itemMp);
 
-      fetch("http://localhost:4000/checkOutMp", {
+      fetch("http://localhost:3001/payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.ACCESS_TOKEN}`
         },
         body: itemMpJson,
       });
@@ -285,5 +286,6 @@ const Cart = () => {
     </div>
   );
 };
+
 
 export default Cart;

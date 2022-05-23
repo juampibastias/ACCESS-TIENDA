@@ -5,6 +5,7 @@ export async function getData(url, token) {
     const res = await fetch(`${baseUrl}/api/${url}`, {
         method: 'GET',
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': token
         }
     })
@@ -70,3 +71,4 @@ export const deleteData = async (url, token) => {
     const data = await res.json()
     return data
 }
+
