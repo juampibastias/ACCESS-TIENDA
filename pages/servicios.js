@@ -1,9 +1,14 @@
 import React from 'react'
+import Head from 'next/head'
 
 
 export const Servicios = () => {
   return (
     <div className='contenedor-servicios'>
+      <Head>
+        <title>ACCESS - SERVICIOS</title>
+        <link rel="icon" src="../public/images/logo-favicom.png"></link>
+      </Head>
        <h1>Nuestros Servicios</h1>
 
       <div className='servicio-items'>

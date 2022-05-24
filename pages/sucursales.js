@@ -1,8 +1,13 @@
 import React from 'react'
+import Head from 'next/head'
 
 export const Sucursales = () => {
   return (
     <div className='contenedor-sucursales'>
+      <Head>
+        <title>ACCESS - SUCURSALES</title>
+        <link rel='shortcut icon' href='/images/favicon.ico'></link>
+      </Head>
    
       <div className="card-container">
         <div className="card " style={{width: 90+"%"}}>

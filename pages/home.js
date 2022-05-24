@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Image from 'next/image'
 import banner from '../public/images/banner.png'
 import banner1 from '../public/images/banner1.png'
@@ -70,6 +71,9 @@ const Home = (props) => {
   }
   return (
     <div className='contenedor-home'>
+      <Head>
+        <title>ACCESS - HOME</title>
+      </Head>
       <Carousel prevLabel="" nextLabel=''>
         <Carousel.Item>
           <Image className="d-block w-100" src={banner1} alt="First slide" />

@@ -92,7 +92,6 @@ const Cart = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.ACCESS_TOKEN}`
         },
         body: itemMpJson,
       });
@@ -143,6 +142,10 @@ const Cart = () => {
 
   return (
     <div className="contenedor-carrito">
+      <Head>
+        <title>MI CARRITO</title>
+        <link rel='shortcut icon' href='/images/favicon.ico'></link>
+      </Head>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
