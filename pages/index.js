@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { useState, useContext, useEffect } from 'react'
 import {DataContext} from '../store/GlobalState'
-
 import { getData } from '../utils/fetchData'
 import ProductItem from '../components/product/ProductItem'
 import filterSearch from '../utils/filterSearch'
@@ -67,8 +66,15 @@ const Home = (props) => {
     <div className="home_page">
       <Head>
         <title>ACCESS - TIENDA</title>
+        <link rel='shortcut icon' href='/images/favicon.ico'></link>
       </Head>
-    <MiniCartWidget />
+    
+    <nav aria-label="breadcrumb">
+  <ol className="breadcrumb">
+    <li className="breadcrumb-item"><a href="home">Inicio</a></li>
+    <li className="breadcrumb-item active" aria-current="page">Tienda Virtual</li>
+  </ol>
+</nav>
       <Filter state={state} />
 
       {

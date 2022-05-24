@@ -28,7 +28,7 @@ const login = async (req, res) => {
         const refresh_token = createRefreshToken({id: user._id})
         
         res.json({
-            msg: "Acceso exitoso!",
+            msg: "Bienvenido a tu cuenta de Access!",
             refresh_token,
             access_token,
             user: {

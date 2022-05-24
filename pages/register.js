@@ -45,6 +45,7 @@ const Register = () => {
       <div>
         <Head>
           <title>Registrate en nuestro sitio</title>
+          <link rel='shortcut icon' href='/images/favicon.ico'></link>
         </Head>
 
         <form className="mx-auto my-4" style={{maxWidth: '500px'}} onSubmit={handleSubmit}>

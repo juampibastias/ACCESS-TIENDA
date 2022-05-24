@@ -17,6 +17,7 @@ const ProductsManager = () => {
     const [product, setProduct] = useState(initialState)
     const {title, price, inStock, description, content, category} = product
 
+
     const [images, setImages] = useState([])
 
     const {state, dispatch} = useContext(DataContext)
@@ -101,12 +102,13 @@ const ProductsManager = () => {
         let res;
         if(onEdit){
             res = await putData(`product/${id}`, {...product, images: [...imgOldURL, ...media]}, auth.token)
+            
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
         }else{
             res = await postData('product', {...product, images: [...imgOldURL, ...media]}, auth.token)
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
         }
-
+        
         return dispatch({type: 'NOTIFY', payload: {success: res.msg}})
         
     }
@@ -116,6 +118,9 @@ const ProductsManager = () => {
             <Head>
                 <title>Administración de productos</title>
             </Head>
+
+            <h3 className='text-center my-5'>PRODUCTOS MANAGER</h3>
+
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
                     
@@ -184,7 +189,7 @@ const ProductsManager = () => {
                             images.map((img, index) => (
                                 <div key={index} className="file_img my-1">
                                     
-                                    <img src={img.url ? img.url : URL.createObjectURL(img)} />                                   alt="imagen" className="img-thumbnail rounded" />
+                                    <img src={img.url ? img.url : URL.createObjectURL(img)} alt="imagen" className="img-thumbnail rounded" />                       
 
                                      <span onClick={() => deleteImage(index)}>X</span>
                                 </div>

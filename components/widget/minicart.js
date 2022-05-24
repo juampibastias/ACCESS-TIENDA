@@ -2,7 +2,7 @@
 import React,{useEffect} from 'react';
 import Link from 'next/link'
 import 'animate.css';
-const MiniCartWidget =()=>{
+const MiniCartWidget =(props)=>{
    
     useEffect(()=>{
         let toggler = document.querySelector('.container-widget');
@@ -20,7 +20,7 @@ const MiniCartWidget =()=>{
           
             <Link href='/cart' >
             
-                <a> <i className="fas fa-shopping-cart " aria-hidden="true"></i></a>
+                <a> <i className="fas fa-shopping-cart " aria-hidden="true"></i> <p>{props.count}</p></a>
            
             </Link>
         </div>

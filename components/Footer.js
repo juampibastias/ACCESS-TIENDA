@@ -1,9 +1,10 @@
 import React from "react";
+import Link from 'next/link'
 
 const Footer = () => {
     return(
         <footer className="footer">
-        <div>
+        <div className="footer-logo">
           <img className="logo-blanco" src="images/logoblanco.png" alt="access" />
         </div>
   
@@ -12,11 +13,11 @@ const Footer = () => {
             <h5>Mapa del Sitio</h5>
   
             <ul>
-              <li>NOSOTROS</li>
-              <li>SUCURSALES</li>
-              <li>SERVICIOS</li>
-              <li>NOVEDADES</li>
-              <li>TIENDA VIRTUAL</li>
+              <li><Link href="/nosotros"><a>NOSOTROS</a></Link></li>
+              <li><Link href="/sucursales"><a>SUCURSALES</a></Link></li>
+              <li><Link href="/servicios"><a>SERVICIOS</a></Link></li>
+              <li><Link href="/novedades"><a>NOVEDADES</a></Link></li>
+              <li><Link href="/" ><a>TIENDA VIRTUAL</a></Link></li>
             </ul>
           </li>
   
@@ -28,7 +29,7 @@ const Footer = () => {
           </li>
         </ul>
   
-        <p>Copyright © All Rights Reserved</p>
+        <p className="copyright-footer">Copyright © All Rights Reserved</p>
       </footer>
     )
 }

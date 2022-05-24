@@ -11,6 +11,7 @@ function Layout({children}) {
             <Notify />
             <Modal />
             {children}
+            {/* <Footer /> */}
 
         </div>
     )

@@ -5,18 +5,21 @@ import {imageUpload} from '../../utils/imageUpload'
 import {postData, getData, putData} from '../../utils/fetchData'
 import {useRouter} from 'next/router'
 
-const NovedadesManager = () => {
+const NovedadesManager = () => {    
     const initialState = {
         name: '',
-        decrip: ''
+        decrip: '',
+        detail: '',
+        category: ''
     }
-    const [novedades, setNovedades] = useState(initialState)
-    const {descrip, name} = novedades
+    const [novedad, setNovedad] = useState(initialState)
+    const {descrip, name, detail, category} = novedad
 
     const [images, setImages] = useState([])
 
     const {state, dispatch} = useContext(DataContext)
-
+    const {categories, auth} = state
+    
     const router = useRouter()
     const {id} = router.query
     const [onEdit, setOnEdit] = useState(false)
@@ -25,19 +28,19 @@ const NovedadesManager = () => {
         if(id){
             setOnEdit(true)
             getData(`novedad/${id}`).then(res => {
-                setNovedades(res.novedad)
+                setNovedad(res.novedad)
                 setImages(res.novedad.images)
             })
         }else{
             setOnEdit(false)
-            setNovedades(initialState)
+            setNovedad(initialState)
             setImages([])
         }
     },[id])
 
     const handleChangeInput = e => {
         const {name, value} = e.target
-        setNovedades({...novedades, [name]:value})
+        setNovedad({...novedad, [name]:value})
         dispatch({type: 'NOTIFY', payload: {}})
     }
 
@@ -59,15 +62,15 @@ const NovedadesManager = () => {
             return err = 'Formato de imagen incorrecto.'
 
             num += 1;
-            if(num <= 5) newImages.push(file)
+            if(num <= 1) newImages.push(file)
             return newImages;
         })
 
         if(err) dispatch({type: 'NOTIFY', payload: {error: err}})
 
         const imgCount = images.length
-        if(imgCount + newImages.length > 5)
-        return dispatch({type: 'NOTIFY', payload: {error: 'Seleccione hasta 5 imagenes.'}})
+        if(imgCount + newImages.length > 1)
+        return dispatch({type: 'NOTIFY', payload: {error: 'Seleccione 1 imagen.'}})
         setImages([...images, ...newImages])
     }
 
@@ -82,7 +85,7 @@ const NovedadesManager = () => {
         if(auth.user.role !== 'admin') 
         return dispatch({type: 'NOTIFY', payload: {error: 'Autenticación inválida.'}})
 
-        if(!name || !descrip === 'all' || images.length === 0)
+        if(!name || !descrip || !detail === 'all' || images.length === 0)
         return dispatch({type: 'NOTIFY', payload: {error: 'Por favor complete todos los campos.'}})
 
     
@@ -111,16 +114,35 @@ const NovedadesManager = () => {
             <Head>
                 <title>Administración de Novedades</title>
             </Head>
+            <h3 className='text-center my-5'>NOVEDADES MANAGER</h3>
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6">
-                    
+
                     <input type="text" name="name" value={name}
-                    placeholder="Nombre o título" className="d-block my-4 w-100 p-2"
+                    placeholder="Título" className="d-block my-4 w-100 p-2"
                     onChange={handleChangeInput} />
 
                     <textarea name="descrip" id="descrip" cols="30" rows="4"
                     placeholder="Descripción" onChange={handleChangeInput}
                     className="d-block my-4 w-100 p-2" value={descrip} />
+
+                    <textarea name="detail" id="detail" cols="30" rows="4"
+                    placeholder="Detalle de la novedad" onChange={handleChangeInput}
+                    className="d-block my-4 w-100 p-2" value={detail} />
+
+                  <div className="input-group-prepend px-0 my-2">
+                        <select name="category" id="category" value={category}
+                        onChange={handleChangeInput} className="custom-select text-capitalize">
+                            <option value="all">Todos los productos</option>
+                            {
+                                categories.map(item => (
+                                    <option key={item._id} value={item._id}>
+                                        {item.name}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
 
 
                     <button type="submit" className="btn btn-info my-2 px-4">
@@ -146,7 +168,7 @@ const NovedadesManager = () => {
                             images.map((img, index) => (
                                 <div key={index} className="file_img my-1">
                                     
-                                    <img src={img.url ? img.url : URL.createObjectURL(img)} />                                   alt="imagen" className="img-thumbnail rounded" />
+                                    <img src={img.url ? img.url : URL.createObjectURL(img)} alt="imagen" className="img-thumbnail rounded" />         
 
                                      <span onClick={() => deleteImage(index)}>X</span>
                                 </div>

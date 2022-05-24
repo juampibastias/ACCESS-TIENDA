@@ -1,12 +1,26 @@
 import { getData } from "../utils/fetchData";
 import { useState } from "react";
 import NovedadesItem from "../components/Novedad/NovedadesItem"
+import Head from 'next/head'
 
 const Novedades = (props) => {
   const [novedades, setNovedades] = useState(props.novedades)
     
   return (
     <div>
+      <Head>
+        <title>ACCESS - NOVEDADES</title>
+        <link rel='shortcut icon' href='/images/favicon.ico'></link>
+      </Head>
+       <nav aria-label="breadcrumb">
+  <ol className="breadcrumb">
+    <li className="breadcrumb-item"><a href="home">Inicio</a></li>
+    <li className="breadcrumb-item active" aria-current="page">Novedades</li>
+  </ol>
+</nav>
+    <div className="contenedor-novedades">
+       
+ 
        {
       novedades.length === 0
       ? <h2>Sin novedades</h2>
@@ -15,7 +29,7 @@ const Novedades = (props) => {
       ))
     }
     </div>
-   
+  </div>
   )
 }
 export async function getServerSideProps() {
