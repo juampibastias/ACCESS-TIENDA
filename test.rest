@@ -1,20 +1,3 @@
-POST http://localhost:3000/createNov 
+POST http://localhost:3001/payment 
 content-type: application/json
 
-{
-        "images":
-            [
-                {"public_id":"Home_media/Auricular-jbl_r2b61l",
-                 "url":"https://res.cloudinary.com/amlacen-on-line/image/upload/v1651963621/Home_media/Auricular-jbl_r2b61l.png"},
-                {"public_id":"Home_media/contadora-de-billetes_uqcoun",
-                 "url":"https://res.cloudinary.com/amlacen-on-line/image/upload/v1651963622/Home_media/contadora-de-billetes_uqcoun.png"},
-                {"public_id":"Home_media/impresora-epson_vobi1v",
-                 "url":"https://res.cloudinary.com/amlacen-on-line/image/upload/v1651963624/Home_media/impresora-epson_vobi1v.png"},
-                {"public_id":"Home_media/impresora-epson2_pchue0",
-                 "url":"https://res.cloudinary.com/amlacen-on-line/image/upload/v1651963626/Home_media/impresora-epson2_pchue0.png"},
-                {"public_id":"Home_media/IMPRESORA-HP_isgjeg",
-                 "url":"https://res.cloudinary.com/amlacen-on-line/image/upload/v1651963628/Home_media/IMPRESORA-HP_isgjeg.png"}
-            ],
-        "name":"productos gamer",
-        "descrip":"Equipos gamer, accesorios, butacas, mouse,\nteclados, joystick, auriculares"
-}

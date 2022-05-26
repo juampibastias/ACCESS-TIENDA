@@ -1,5 +1,6 @@
 import connectDB from '../../../utils/connectDB'
 import Novedades from '../../../models/novedadesModel'
+import auth from '../../../middleware/auth'
 
 connectDB()
 
@@ -12,7 +13,7 @@ export default async (req, res) => {
             await updateNovedades(req, res)
             break;
         case "DELETE":
-            await Novedades(req, res)
+            await deleteNovedades(req, res)
             break;
     }
 }

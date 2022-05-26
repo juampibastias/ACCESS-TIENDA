@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import pibeDeFondo from "../public/images/pibeDeFondo.png";
 import { Accordion } from "react-bootstrap";
+import axios from "axios";
 
 let itemMp;
 let itemMpJson;
@@ -87,13 +88,12 @@ const Cart = () => {
       };
 
       itemMpJson = JSON.stringify(itemMp);
-
-      fetch("http://localhost:3001/payment", {
-        method: "POST",
+      fetch("https://api-mp-access.herokuapp.com/payment", {
+        method: "POST", 
+        body: itemMpJson, 
         headers: {
           "Content-Type": "application/json",
         },
-        body: itemMpJson,
       });
     }
 
@@ -144,7 +144,7 @@ const Cart = () => {
     <div className="contenedor-carrito">
       <Head>
         <title>MI CARRITO</title>
-        <link rel='shortcut icon' href='/images/favicon.ico'></link>
+        <link rel="shortcut icon" href="/images/favicon.ico"></link>
       </Head>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
@@ -272,12 +272,12 @@ const Cart = () => {
             </Accordion>
             <div className="contenedor-subtotal">
               <div className="subtotal-item">
-              <h4>Articulos</h4>
-              <h4>$ {total}</h4>
+                <h4>Articulos</h4>
+                <h4>$ {total}</h4>
               </div>
               <div className="subtotal-item">
-              <h4>Envio</h4>
-              <h4>$ {0}</h4>
+                <h4>Envio</h4>
+                <h4>$ {0}</h4>
               </div>
             </div>
             <h3>
@@ -298,6 +298,5 @@ const Cart = () => {
     </div>
   );
 };
-
 
 export default Cart;

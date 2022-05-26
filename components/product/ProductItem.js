@@ -10,7 +10,6 @@ const ProductItem = ({product, handleCheck}) => {
     const userLink = () => {
         return(
             <>
-                
                 <button className="btn add-to-cart"
                 style={{marginLeft: '5px', flex: 1}}
                 disabled={product.inStock === 0 ? true : false} 
