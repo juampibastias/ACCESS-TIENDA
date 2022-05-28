@@ -87,14 +87,12 @@ const Cart = () => {
         quantity: item.quantity,
       };
 
-      itemMpJson = JSON.stringify(itemMp);
-      fetch("https://api-mp-access.herokuapp.com/payment", {
-        method: "POST", 
-        body: itemMpJson, 
+      axios.post('http://localhost:3001/payment', {
+        data: itemMp, 
         headers: {
           "Content-Type": "application/json",
         },
-      });
+      })
     }
 
     if (newCart.length < cart.length) {
