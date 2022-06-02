@@ -52,11 +52,10 @@ const DetailProduct = (props) => {
 
                     <h6 className="text-danger">Vendidos: {product.sold}</h6>
                 </div>
-
+                <div><h4>Descripción</h4></div>
                 <div className="my-2">{product.description}</div>
-                <div className="my-2">
-                    {product.content}
-                </div>
+                <div><h4>Especificaciones técnicas</h4></div>
+                <div className="my-2">{product.content}</div>
 
               <div className='botonera'>
               <button type="button" className="btn add-to-cart"

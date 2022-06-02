@@ -15,7 +15,7 @@ const DetailNovedades = (props) => {
   </ol>
 </nav>
       <Head>
-        <title>Detalle Novedades</title>
+        <title>DETALLE-NOVEDADES</title>
       </Head>
       <div className="contenedor-novedad">
         <img src={novedades.images[0].url} alt={novedades.images[0].url} className=""
@@ -23,7 +23,7 @@ const DetailNovedades = (props) => {
 
       <div className="contenedor-novedad-texto">
       <div className="title">
-        <h2>{novedades.name}</h2>
+        <h2>{novedades.name.toUpperCase()}</h2>
         </div>
         <div className="desc">
         {novedades.descrip}

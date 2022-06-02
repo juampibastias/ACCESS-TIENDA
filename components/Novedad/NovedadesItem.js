@@ -59,7 +59,7 @@ const NovedadesItem = ({novedad, handleCheck}) =>{
         
         <div className="card-body-custom">
           <Link href={`novedad/${novedad._id}`}>
-          <h5 className="card-title">{novedad.name}</h5>
+          <h5 className="card-title">{novedad.name.toUpperCase()}</h5>
           </Link>
           <Link href={`novedad/${novedad._id}`}>
           <p className="card-text">{novedad.descrip}</p>          

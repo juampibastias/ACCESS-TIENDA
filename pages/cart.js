@@ -87,12 +87,17 @@ const Cart = () => {
         quantity: item.quantity,
       };
 
-      axios.post('http://localhost:3001/payment', {
-        data: itemMp, 
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      axios
+        .post("http://localhost:3001/payment", {
+          data: itemMp,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) =>{
+          //window.location.href= `${response.data.data, '_blank'}`
+          window.open(response.data.data, '_blank')
+          })
     }
 
     if (newCart.length < cart.length) {
