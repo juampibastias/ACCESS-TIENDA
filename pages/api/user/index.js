@@ -42,7 +42,7 @@ const uploadInfor = async (req, res) => {
             user: {
                 name,
                 avatar,
-                phone,
+                phone: newUser.phone,
                 email: newUser.email,
                 role: newUser.role
             }

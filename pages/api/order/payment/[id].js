@@ -22,7 +22,7 @@ const paymentOrder = async(req, res) => {
     
             await Orders.findOneAndUpdate({_id: id}, {
                 paid: true, dateOfPayment: new Date().toISOString(), paymentId,
-                method: 'Mercado Pago'
+                method: 'MercadoPago'
             })
     
             res.json({msg: 'Pago Exitoso!'})

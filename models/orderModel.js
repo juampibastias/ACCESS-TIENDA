@@ -10,6 +10,7 @@ const orderSchema = new mongoose.Schema({
     provincia: String,
     ciudad: String,
     cp: String,
+    coment: String,
     cart: Array,
     total: Number,
     paymentId: String,

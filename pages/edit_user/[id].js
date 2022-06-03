@@ -76,8 +76,8 @@ const EditUser = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="email" className="d-block">Email</label>
-                    <input type="text" id="email" defaultValue={editUser.email} disabled />
+                    <label htmlFor="email" className="d-block"></label>
+                    <input type="text" id="" defaultValue={editUser.email} disabled />
                 </div>
 
                 <div className="form-group">

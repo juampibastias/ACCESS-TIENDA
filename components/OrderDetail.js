@@ -31,17 +31,19 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
             <div key={order._id} style={{margin: '20px auto'}} className="row justify-content-around">
 
                 <div className="text-uppercase my-3" style={{maxWidth: '600px'}}>
-                    <h2 className="text-break">Order {order._id}</h2>
+                    <h2 className="text-break">Mi orden de pedido {order._id}</h2>
 
                     <div className="mt-4 text-secondary">
                         <h3>Datos de envío</h3>
                         <p>Nombre: {order.user.name}</p>
                         <p>Email: {order.user.email}</p>
-                        <p>Provincia: {order.user.provincia}</p>
-                        <p>Ciudad: {order.user.ciudad}</p>
-                        <p>Codigo postal: {order.user.cp}</p>
+                        <p>Provincia: {order.provincia}</p>
+                        <p>Ciudad: {order.ciudad}</p>
+                        <p>Codigo postal: {order.cp}</p>
                         <p>Dirección: {order.address}</p>
                         <p>Telefono: {order.mobile}</p>
+                        <p>Comentarios: {order.coment}</p>
+
 
                         <div className={`alert ${order.delivered ? 'alert-success' : 'alert-danger'}
                         d-flex justify-content-between align-items-center`} role="alert">

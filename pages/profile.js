@@ -118,7 +118,7 @@ const Profile = () => {
 
                     <div className="form-group">
                         <label htmlFor="phone">Teléfono</label>
-                        <input type="text" name="phone" value={phone} className="form-control"
+                        <input type="text" name="phone" value={auth.user.phone} className="form-control"
                         placeholder="Su teléfono" onChange={handleChange} />
                     </div>
 

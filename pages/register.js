@@ -65,7 +65,7 @@ const Register = () => {
             <label htmlFor="exampleInputEmail1">Email</label>
             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             name="email" value={email} onChange={handleChangeInput} />
-            <small id="emailHelp" className="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+            <small id="emailHelp" className="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
           </div>
 
           <div className="form-group">
