@@ -11,7 +11,8 @@ import { Accordion } from "react-bootstrap";
 import axios from "axios";
 
 let itemMp;
-let itemMpJson;
+let itemMpArray = [];
+
 const Cart = () => {
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
@@ -76,29 +77,38 @@ const Cart = () => {
       });
 
     let newCart = [];
+    while(itemMpArray.length > 0) {
+    itemMpArray.pop();
+    }  
     for (const item of cart) {
       const res = await getData(`product/${item._id}`);
       if (res.product.inStock - item.quantity >= 0) {
         newCart.push(item);
       }
-      itemMp = {
-        title: item.title,
-        price: item.price,
-        quantity: item.quantity,
-      };
 
-      axios
-        .post("http://localhost:3001/payment", {
-          data: itemMp,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((response) =>{
-          //window.location.href= `${response.data.data, '_blank'}`
-          window.open(response.data.data, '_blank')
-          })
+      
+    itemMp = {
+      title: item.title,
+      unit_price: item.price,
+      quantity: item.quantity,
+    };
+
+    itemMpArray.push(itemMp);
+
+    
     }
+      
+    axios.post("http://localhost:3001/payment", {
+      data: itemMpArray,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  
+    .then((response) =>{
+      window.open(response.data.data, '_blank')
+      })
+    
 
     if (newCart.length < cart.length) {
       setCallback(!callback);
