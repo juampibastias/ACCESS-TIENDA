@@ -106,7 +106,7 @@ const Home = (props) => {
         </div>
       }
 
-      <div className="products">
+      <div className="featured">
         {
           products.length === 0 
           ? <h2>No hay productos</h2>
