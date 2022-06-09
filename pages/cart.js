@@ -13,9 +13,8 @@ import axios from "axios";
 let itemMp;
 let itemMpArray = [];
 
-const Cart = ({ provincias }) => {
+const Cart = () => {
 
-  console.log(provincias)
   
 
   const { state, dispatch } = useContext(DataContext);
@@ -354,7 +353,7 @@ const Cart = ({ provincias }) => {
     </div>
   );
 };
-export async function getServerSideProps() {
+/* export async function getServerSideProps() {
   try {
     const peticion = await fetch(
       "https://apis.datos.gob.ar/georef/api/provincias"
@@ -364,6 +363,6 @@ export async function getServerSideProps() {
       props: { provincias }, // will be passed to the page component as props
     };
   } catch (error) {}
-}
+} */
 
 export default Cart;
