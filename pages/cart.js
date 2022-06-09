@@ -337,7 +337,8 @@ const Cart = () => {
               Total: <span className="text-danger">${total}</span>
             </h3>
           </div>
-          <Link href="/">
+         <div className="contenedor-boton">
+         <Link href="/">
             <a className="btn add-to-cart my-2">Seguir comprando</a>
           </Link>
 
@@ -346,6 +347,7 @@ const Cart = () => {
               Iniciar pago
             </a>
           </Link>
+         </div>
         </div>
       </div>
     </div>
