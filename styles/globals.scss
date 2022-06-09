@@ -145,6 +145,9 @@ $color-2-2:rgb(130, 104, 193);
     }
 }
 
+//Navbar
+.navbar {}
+
 .social-collapse {
     display: flex;
     flex-direction: row !important;
@@ -322,7 +325,7 @@ $color-2-2:rgb(130, 104, 193);
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 aspect-ratio: 1;
                 object-position: center;
 
