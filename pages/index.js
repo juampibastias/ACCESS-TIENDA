@@ -6,6 +6,7 @@ import ProductItem from "../components/product/ProductItem";
 import filterSearch from "../utils/filterSearch";
 import { useRouter } from "next/router";
 import Filter from "../components/Filter";
+import Link from 'next/link'
 import MiniCartWidget from "../components/widget/minicart";
 
 const Home = (props) => {
@@ -84,6 +85,11 @@ const Home = (props) => {
         width="785"
         height="40"
       />
+      <button className="btn btn-success m-2">
+      <Link href='/costoEnvio'>
+      Costos de envíos
+      </Link>
+      </button>
       <Filter state={state} />
 
       {auth.user && auth.user.role === "admin" && (
