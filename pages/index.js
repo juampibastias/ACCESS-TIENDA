@@ -77,13 +77,16 @@ const Home = (props) => {
           </li>
         </ol>
       </nav>
-      <img
+     <div className="contenedor-mp-banner">
+     <img
         src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/785X40.jpg"
         title="Mercado Pago - Medios de pago"
         alt="Mercado Pago - Medios de pago"
         width="785"
         height="40"
+        id="banner-mercadopago"
       />
+     </div>
       <Filter state={state} />
 
       {auth.user && auth.user.role === "admin" && (
