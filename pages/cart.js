@@ -105,7 +105,7 @@ const Cart = () => {
 
       itemMpArray.push(itemMp);
     }
-
+//llamada a api de mercadopago
     axios
       .post("http://localhost:3001/payment", {
         data: itemMpArray,
@@ -353,7 +353,9 @@ const Cart = () => {
     </div>
   );
 };
-/* export async function getServerSideProps() {
+/* 
+//llamada a api provincias y ciudades argentias
+export async function getServerSideProps() {
   try {
     const peticion = await fetch(
       "https://apis.datos.gob.ar/georef/api/provincias"
