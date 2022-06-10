@@ -526,13 +526,14 @@ $color-2-2:rgb(130, 104, 193);
                     text-align: center;
 
                     font-weight: bold;
+                    max-width: 20rem;
                 }
             }
 
             img {
                 width: 100px;
                 height: 100px;
-                object-fit: cover;
+                object-fit: contain;
             }
         }
 
@@ -1151,12 +1152,18 @@ a {
     }
 }
 
+.contenedor-mp-banner {
+    width: 100%;
+    text-align: center;
+}
+
+
 //Página De Producto
 //-------------------
 .pdp {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 
     .contenedor-img-desc {
         display: flex;
@@ -1175,14 +1182,20 @@ a {
         }
 
         .thumbnail-pdp {
-            width: 30%;
+            width: 100%;
             height: auto;
+            display: flex;
+            flex-direction: row;
+
+            flex-wrap: wrap;
 
             img {
                 object-fit: contain;
                 object-position: center;
-                width: 100%;
+                width: 33.3%;
                 height: 100%;
+                aspect-ratio: 1;
+
             }
         }
     }
@@ -1190,6 +1203,37 @@ a {
     .text-pdp {
         width: 40%;
         padding-left: 3rem;
+
+        .title-price {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+            h2,
+            h5 {
+                color: $color-2;
+                font-size: 2rem;
+            }
+
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            margin: 2rem 0;
+
+            h4 {
+                font-weight: bold;
+                color: $color-2;
+            }
+        }
+
+        .stock-info {
+            padding: 1rem 0;
+        }
+
     }
 }
 
@@ -1265,7 +1309,93 @@ a {
     }
 }
 
+//Order
+.order-page {
+    .btn-back {
+        text-align: center;
 
+        button {
+            width: 300px;
+        }
+    }
+
+    .order-container {
+        .container-general {
+            width: 80%;
+            margin: 0 auto;
+
+            .order-upper {
+                .order-title {
+                    color: $color-2;
+                    font-size: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    b {
+                        background-color: $color-2;
+                        border-radius: 10px;
+                        color: white;
+                        width: max-content;
+                        padding: 0.5rem;
+                    }
+                }
+
+                .order-item-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .order-details {
+                        h3 {
+                            color: $color-2;
+                            font-size: 1.5rem;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .product-list-order {
+                        display: flex;
+                        flex-direction: column;
+
+                        h3 {
+                            color: $color-2;
+                            font-size: 1.5rem;
+                            text-decoration: underline;
+                        }
+
+                        .articles-list {
+                            background-color: lightgray;
+                            display: flex;
+                            flex-direction: row;
+                            padding: 0.5rem;
+                            border-radius: 10px;
+
+                            .title-price-qty {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                max-width: 400px;
+
+                                span {
+                                    text-align: right;
+                                    color: black;
+                                }
+                            }
+
+                            img {
+                                width: 200px;
+                                height: auto;
+                                object-fit: contain;
+                                object-position: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 //BOTONES VARIOS
 .botonera {
@@ -1621,7 +1751,7 @@ ul li a {
                 img {
                     width: 90px;
                     height: 90px;
-                    object-fit: cover;
+                    object-fit: contain;
                 }
             }
 
