@@ -2767,6 +2767,9 @@ ul li a {
     color: white;
     font-weight: 300;
   }
+  .order-page .order-container .container-general .order-upper .order-title b {
+    font-size: 1rem;
+  }
   .order-page .order-container .container-general .order-upper .order-item-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
