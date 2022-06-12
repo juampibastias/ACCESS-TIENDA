@@ -8,9 +8,11 @@ import { useRouter } from "next/router";
 import Filter from "../components/Filter";
 import Link from 'next/link'
 import MiniCartWidget from "../components/widget/minicart";
+import path from "path";
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products);
+  const posts = props.provincias;
 
   const [isCheck, setIsCheck] = useState(false);
   const [page, setPage] = useState(1);
@@ -79,16 +81,8 @@ const Home = (props) => {
         </ol>
       </nav>
      <div className="contenedor-mp-banner">
-     <img
-        src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/785X40.jpg"
-        title="Mercado Pago - Medios de pago"
-        alt="Mercado Pago - Medios de pago"
-        width="785"
-        height="40"
-        id="banner-mercadopago"
-      />
       <button className="btn btn-success m-2">
-      <Link href='/costoEnvio'>
+      <Link href="/costoEnvio">
       Costos de envíos
       </Link>
       </button>
@@ -158,7 +152,7 @@ export async function getServerSideProps({ query }) {
 
   const res = await getData(
     `product?limit=${
-      page * 6
+      page * 20
     }&category=${category}&sort=${sort}&title=${search}`
   );
   // server side rendering
