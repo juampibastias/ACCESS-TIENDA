@@ -7,9 +7,7 @@ import { getData, postData } from "../utils/fetchData";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import pibeDeFondo from "../public/images/pibeDeFondo.png";
-import axios from 'axios'
-
-
+import axios from "axios";
 
 //Variables para axios mercadopago
 let itemMp;
@@ -17,13 +15,13 @@ let itemMpArray = [];
 
 const Cart = () => {
 
-  let tarifaEnvios = require('/costoEnvio.json')
+  //let tarifaEnvios = require('/costoEnvio.json')
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
 
   const [total, setTotal] = useState(0);
-  const [costo, setCosto] = useState(0);
+  //const [costo, setCosto] = useState(0);
 
   const [provincia, setProvincia] = useState("");
   const [ciudad, setCiudad] = useState("");
