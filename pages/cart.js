@@ -7,12 +7,9 @@ import { getData, postData } from "../utils/fetchData";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import pibeDeFondo from "../public/images/pibeDeFondo.png";
-<<<<<<< HEAD
 import axios from 'axios'
 
-=======
-import axios from "axios";
->>>>>>> 43e17a733ef61d2b8e69b20f7ed922974c84a739
+
 
 //Variables para axios mercadopago
 let itemMp;
