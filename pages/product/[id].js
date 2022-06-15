@@ -91,17 +91,17 @@ const DetailProduct = (props) => {
                 </button>
               </div>
               <div className='social-share'>
-                <h4>Compartir</h4>
+                <h4>Compartir +</h4>
                 <ul>
                     <li>
                         <a href={`https://www.facebook.com/sharer/sharer.php?u=https://access.com.ar`+route.asPath} target="_blank"><i className="fab fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href={`https://twitter.com/intent/tweet?url=https://access.com.ar`+route.asPath} target="_blank"><i className="fab fa-twitter"></i></a>
+                        <a href={`https://twitter.com/intent/tweet?text=Mira este producto! https://access.com.ar`+route.asPath} target="_blank"><i className="fab fa-twitter"></i></a>
                     </li>
             
                     <li>
-                        <a href="https://www.instagram.com/accounts/login/?next=%2Faccounts%2F%3F__a%3D1%26%24_e%3D15%26%24_g%3D%26%24_k%3D%26%24_l%3D%26%24_t%3D" target="_blank"><i className="fab fa-instagram"></i></a>
+                        <a href={`whatsapp://send?text=Mira este producto!:https://access.com.ar`+route.asPath}><i className="fab fa-whatsapp"></i></a>
                     </li>
                 </ul>
               </div>

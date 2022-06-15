@@ -37,6 +37,7 @@ $color-2-2:rgb(130, 104, 193);
     max-width: 100%;
     margin: 0;
     padding: 0;
+
 }
 
 .container-general {
@@ -1379,14 +1380,54 @@ a {
     }
 
     .social-share {
+
+        width: max-content;
+        padding: 0.5rem;
+        color: $color-2-2;
+        margin: 1rem;
+        margin-left: 0;
+        border-radius: 10px;
+
         ul {
+
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+
             li {
+                margin-right: 10px;
                 list-style: none;
 
                 i {
-                    color: $color-2;
+                    color: $color-2-2;
                     font-size: 1.5rem;
                 }
+
+                &:nth-child(1) {
+                    &:hover {
+                        i {
+                            color: #1877F2;
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    &:hover {
+                        i {
+                            color: #00ACEE;
+                        }
+                    }
+                }
+
+                &:nth-child(3) {
+                    &:hover {
+                        i {
+                            color: #25D366;
+                        }
+                    }
+                }
+
+
             }
         }
     }
@@ -2757,9 +2798,12 @@ ul li a {
     //pagina de producto - mbl
     .pdp {
 
+        flex-direction: column;
 
         .contenedor-img-desc {
 
+
+            width: 100%;
 
             img {}
 
@@ -2771,6 +2815,7 @@ ul li a {
         }
 
         .text-pdp {
+            width: 90%;
 
             .title-price {
                 flex-direction: column;
@@ -2851,6 +2896,19 @@ ul li a {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    .container {
+        .contenedor-nosotros {
+            .contenedor-botones {
+                flex-direction: column;
+
+                a {
+                    text-align: center;
+                    justify-content: center;
                 }
             }
         }
@@ -3259,5 +3317,18 @@ ul li a {
         }
     }
 
+    .container {
+
+        .mp-pending,
+        .mp-error {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
 
 }

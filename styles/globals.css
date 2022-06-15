@@ -1642,13 +1642,48 @@ a {
   padding: 1rem 0;
 }
 
+.pdp .social-share {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.5rem;
+  color: #8268c1;
+  margin: 1rem;
+  margin-left: 0;
+  border-radius: 10px;
+}
+
+.pdp .social-share ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .pdp .social-share ul li {
+  margin-right: 10px;
   list-style: none;
 }
 
 .pdp .social-share ul li i {
-  color: #534080;
+  color: #8268c1;
   font-size: 1.5rem;
+}
+
+.pdp .social-share ul li:nth-child(1):hover i {
+  color: #1877F2;
+}
+
+.pdp .social-share ul li:nth-child(2):hover i {
+  color: #00ACEE;
+}
+
+.pdp .social-share ul li:nth-child(3):hover i {
+  color: #25D366;
 }
 
 .contenedor-filtros {
@@ -2753,6 +2788,18 @@ ul li a {
     width: 90%;
     margin: 2rem auto;
   }
+  .pdp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .pdp .contenedor-img-desc {
+    width: 100%;
+  }
+  .pdp .text-pdp {
+    width: 90%;
+  }
   .pdp .text-pdp .title-price {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2796,6 +2843,18 @@ ul li a {
   }
   .order-page .order-container .container-general .order-upper .order-item-container .product-list-order .articles-list img {
     width: 150px;
+  }
+  .container .contenedor-nosotros .contenedor-botones {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .contenedor-nosotros .contenedor-botones a {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -3051,6 +3110,14 @@ ul li a {
   }
   .order-page .order-container .container-general .order-upper .order-item-container .product-list-order .articles-list img {
     width: 150px;
+  }
+  .container .mp-pending h2,
+  .container .mp-error h2 {
+    font-size: 1.5rem;
+  }
+  .container .mp-pending p,
+  .container .mp-error p {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=globals.css.map */
