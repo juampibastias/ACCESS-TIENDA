@@ -106,7 +106,7 @@ function NavBar() {
                 <a className=" text-center"><img src={hostname()+`/../images/logo.png`} className="logo" layout="intrinsic" alt='logo-access' /></a>
             </Link>
             <div className='contenedor-form-search'>
-            <form autoComplete="off" className=" col-md-4 px-0 buscador-artic">
+            <form autoComplete="off" className="nav-buscador-artic">
                 <label>
                 <input type="text" placeholder='Buscá tu producto' className="form-control" list="title_product"
                 value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} />

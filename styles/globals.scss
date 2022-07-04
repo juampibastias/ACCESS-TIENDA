@@ -158,7 +158,7 @@ $color-2-2:rgb(130, 104, 193);
     }
 }
 
-.social-collapse {
+.social-collapse.navbar-nav {
     display: flex;
     flex-direction: row !important;
     align-items: center;
@@ -1477,10 +1477,7 @@ a {
 
     .buscador-artic {
         width: 30%;
-        margin: auto 2rem;
-        position: absolute;
-        top: calc(10%);
-        bottom: 0;
+
 
         label {
             display: flex;
@@ -2357,6 +2354,57 @@ ul li a {
         display: block;
     }
 
+    .social-collapse.navbar-nav {
+        display: none;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+
+        .cartitems-counter {
+            background-color: $color-2;
+            padding: 5px 8px;
+            line-height: 0.8;
+            border-radius: 50%;
+            left: -1.5rem;
+            top: -0.3rem;
+            font-family: sansation;
+        }
+
+        .icono-redes {
+            width: 30px;
+            height: 30px;
+            display: flex;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+
+        .userSignAvatar {
+            display: flex;
+            flex-direction: row;
+            color: white !important;
+            margin-right: 3rem;
+            align-items: center;
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 0.5rem;
+            }
+        }
+
+        .nav-item.dropdown {
+            #navbarDropdownMenuLink {
+                color: white;
+                font-weight: 600;
+            }
+        }
+    }
+
     //Navbar
     .navbar {
         display: flex;
@@ -2366,7 +2414,7 @@ ul li a {
         .logo {
             display: flex;
             flex-direction: row;
-            width: 50% !important;
+
         }
     }
 
@@ -2505,7 +2553,22 @@ ul li a {
 }
 
 @media screen and (max-width: 768px) {
+
+    //Navbar
+    .navbar.bootless-margin {
+        background-color: black;
+
+        .logo {
+            width: 250px;
+            height: auto;
+            position: relative;
+
+        }
+    }
+
     //CARRITO
+
+
 
     .contenedor-carrito {
         display: flex;
@@ -2935,6 +2998,8 @@ ul li a {
         flex-direction: column;
     }
 
+
+
     .buscador-artic {
         width: 30%;
         margin: auto 2rem;
@@ -2990,6 +3055,19 @@ ul li a {
 }
 
 @media screen and (max-width:500px) {
+
+    //Navbar
+    .navbar.bootless-margin {
+        background-color: black;
+
+        .logo {
+            width: 150px;
+            height: auto;
+            position: relative;
+
+        }
+    }
+
 
     .featured {
 

@@ -171,7 +171,7 @@ body {
   position: relative;
 }
 
-.social-collapse {
+.social-collapse.navbar-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,7 +188,7 @@ body {
   margin: 1rem 0;
 }
 
-.social-collapse .cartitems-counter {
+.social-collapse.navbar-nav .cartitems-counter {
   background-color: #534080;
   padding: 5px 8px;
   line-height: 0.8;
@@ -198,7 +198,7 @@ body {
   font-family: sansation;
 }
 
-.social-collapse .icono-redes {
+.social-collapse.navbar-nav .icono-redes {
   width: 30px;
   height: 30px;
   display: -webkit-box;
@@ -206,14 +206,14 @@ body {
   display: flex;
 }
 
-.social-collapse .icono-redes img {
+.social-collapse.navbar-nav .icono-redes img {
   width: 100%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.social-collapse .userSignAvatar {
+.social-collapse.navbar-nav .userSignAvatar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,13 +228,13 @@ body {
           align-items: center;
 }
 
-.social-collapse .userSignAvatar img {
+.social-collapse.navbar-nav .userSignAvatar img {
   width: 30px;
   height: 30px;
   margin-right: 0.5rem;
 }
 
-.social-collapse .nav-item.dropdown #navbarDropdownMenuLink {
+.social-collapse.navbar-nav .nav-item.dropdown #navbarDropdownMenuLink {
   color: white;
   font-weight: 600;
 }
@@ -1743,10 +1743,6 @@ a {
 
 .contenedor-filtros .buscador-artic {
   width: 30%;
-  margin: auto 2rem;
-  position: absolute;
-  top: calc(10%);
-  bottom: 0;
 }
 
 .contenedor-filtros .buscador-artic label {
@@ -2524,6 +2520,65 @@ ul li a {
   .links-list-vertical {
     display: block;
   }
+  .social-collapse.navbar-nav {
+    display: none;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 1rem 0;
+  }
+  .social-collapse.navbar-nav .cartitems-counter {
+    background-color: #534080;
+    padding: 5px 8px;
+    line-height: 0.8;
+    border-radius: 50%;
+    left: -1.5rem;
+    top: -0.3rem;
+    font-family: sansation;
+  }
+  .social-collapse.navbar-nav .icono-redes {
+    width: 30px;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .social-collapse.navbar-nav .icono-redes img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .social-collapse.navbar-nav .userSignAvatar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    color: white !important;
+    margin-right: 3rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .social-collapse.navbar-nav .userSignAvatar img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+  .social-collapse.navbar-nav .nav-item.dropdown #navbarDropdownMenuLink {
+    color: white;
+    font-weight: 600;
+  }
   .navbar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2543,7 +2598,6 @@ ul li a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    width: 50% !important;
   }
   .featured h2 {
     text-align: center;
@@ -2606,6 +2660,14 @@ ul li a {
 }
 
 @media screen and (max-width: 768px) {
+  .navbar.bootless-margin {
+    background-color: black;
+  }
+  .navbar.bootless-margin .logo {
+    width: 250px;
+    height: auto;
+    position: relative;
+  }
   .contenedor-carrito {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2946,6 +3008,14 @@ ul li a {
 }
 
 @media screen and (max-width: 500px) {
+  .navbar.bootless-margin {
+    background-color: black;
+  }
+  .navbar.bootless-margin .logo {
+    width: 150px;
+    height: auto;
+    position: relative;
+  }
   .featured h2 {
     text-align: center;
     padding: 1rem;
