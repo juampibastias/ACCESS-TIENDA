@@ -147,7 +147,16 @@ $color-2-2:rgb(130, 104, 193);
 }
 
 //Navbar
-.navbar {}
+.navbar.bootless-margin {
+    background-color: black;
+
+    .logo {
+        width: 300px;
+        height: auto;
+        position: relative;
+
+    }
+}
 
 .social-collapse {
     display: flex;
@@ -175,6 +184,20 @@ $color-2-2:rgb(130, 104, 193);
             width: 100%;
             height: auto;
             object-fit: contain;
+        }
+    }
+
+    .userSignAvatar {
+        display: flex;
+        flex-direction: row;
+        color: white !important;
+        margin-right: 3rem;
+        align-items: center;
+
+        img {
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5rem;
         }
     }
 
@@ -2912,6 +2935,11 @@ ul li a {
                 }
             }
         }
+    }
+
+    //breadcrumbs
+    nav[aria-label="breadcrumb"] {
+        display: none;
     }
 }
 

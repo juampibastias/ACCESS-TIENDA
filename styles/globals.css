@@ -161,6 +161,16 @@ body {
   letter-spacing: 1.5px;
 }
 
+.navbar.bootless-margin {
+  background-color: black;
+}
+
+.navbar.bootless-margin .logo {
+  width: 300px;
+  height: auto;
+  position: relative;
+}
+
 .social-collapse {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -201,6 +211,27 @@ body {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.social-collapse .userSignAvatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white !important;
+  margin-right: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social-collapse .userSignAvatar img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
 }
 
 .social-collapse .nav-item.dropdown #navbarDropdownMenuLink {
@@ -2855,6 +2886,9 @@ ul li a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  nav[aria-label="breadcrumb"] {
+    display: none;
   }
 }
 

@@ -6,6 +6,9 @@ import Cookie from 'js-cookie'
 import Image from 'next/image'
 import logo from '../public/images/logo.png'
 import MiniCartWidget from './widget/minicart'
+import path from 'path'
+import { hostname } from 'os'
+
 
 function NavBar() {
     const router = useRouter()
@@ -13,7 +16,9 @@ function NavBar() {
     const { auth, cart } = state
     const   [isOpen, setIsOpen] = useState(true)
 
-
+   
+    let locationProtocol ;
+   
     useEffect(() => {
         const btnMobile = document.querySelectorAll('.nav-item-mobile');
         const dropdownMobile = window.document.querySelector('#navbarNavDropdown');
@@ -22,7 +27,10 @@ function NavBar() {
            
        
         setIsOpen(false)
+      
     }, [isOpen])
+   
+ 
   
     let abrirNav =()=>{
        
@@ -92,9 +100,9 @@ function NavBar() {
     return (
         <header>
             <MiniCartWidget count={cart.length} />
-        <nav className="navbar bootless-margin navbar-expand-lg navbar-light bg-dark text-light">
+        <nav className="navbar bootless-margin navbar-expand-lg navbar-light text-light">
             <Link className="text-center"  href="/home">
-                <a className=" text-center"><Image src={logo} className="logo" layout="intrinsic" alt='logo-access' /></a>
+                <a className=" text-center"><img src={hostname()+`/../images/logo.png`} className="logo" layout="intrinsic" alt='logo-access' /></a>
             </Link>
             <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -102,7 +110,7 @@ function NavBar() {
             <div className="collapse navbar-collapse justify-content-end" >
                 <ul className="navbar-nav social-collapse p-1">
          
-                    <li className="nav-item">
+                    {/* <li className="nav-item shopping">
                         <Link href="/cart">
                             <a style={{color:'white'}} className={"nav-link" + isActive('/cart')}>
                                 <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
@@ -113,13 +121,14 @@ function NavBar() {
                                 </i> CARRITO
                             </a>
                         </Link>
-                    </li>
+                    </li> */}
                     {
                         Object.keys(auth).length === 0 
                         ? <li className="nav-item">
                             <Link href="/signin">
-                                <a style={{color:'white'}} className={"nav-link" + isActive('/signin')}>
-                                    <i className="fas fa-user" aria-hidden="true"></i> Ingresar
+                                <a  className={"userSignAvatar nav-link" + isActive('/signin')}>
+                                    <img src={hostname()+`/../icons/user.svg`} aria-hidden="true" /> 
+                                    Ingresar
                                 </a>
                             </Link>
                         </li>
@@ -171,6 +180,9 @@ function NavBar() {
                         <Link href="/">
                             <a style={{color:'white'}} className={"nav-link" + isActive('/')}>
                                 TIENDA VIRTUAL
+                                <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
+                                   
+                                </i>
                             </a>
                         </Link>
                     </li>
