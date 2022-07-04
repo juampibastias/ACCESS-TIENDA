@@ -1478,6 +1478,9 @@ a {
     .buscador-artic {
         width: 30%;
         margin: auto 2rem;
+        position: absolute;
+        top: calc(10%);
+        bottom: 0;
 
         label {
             display: flex;
@@ -2150,6 +2153,8 @@ ul li a {
             width: 80%;
             margin: auto 2rem;
             margin-bottom: 1rem;
+
+            position: relative;
 
             label {
                 display: flex;
@@ -2923,6 +2928,47 @@ ul li a {
             }
         }
     }
+
+    .contenedor-filtros {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buscador-artic {
+        width: 30%;
+        margin: auto 2rem;
+        position: relative;
+
+
+        label {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+
+            input {
+                padding: 0;
+                margin: 0;
+                padding-left: 3rem;
+                border: none;
+                border-radius: 0;
+            }
+
+            &::before {
+                content: "";
+                display: flex;
+                flex-direction: row;
+                position: absolute;
+                left: 0.5rem;
+                top: 0.2rem;
+                width: 30px;
+                height: 30px;
+                background-image: url("/icons/3844432_magnifier_search_zoom_icon.svg");
+            }
+        }
+    }
+
 
     .container {
         .contenedor-nosotros {

@@ -1744,6 +1744,9 @@ a {
 .contenedor-filtros .buscador-artic {
   width: 30%;
   margin: auto 2rem;
+  position: absolute;
+  top: calc(10%);
+  bottom: 0;
 }
 
 .contenedor-filtros .buscador-artic label {
@@ -2337,6 +2340,7 @@ ul li a {
     width: 80%;
     margin: auto 2rem;
     margin-bottom: 1rem;
+    position: relative;
   }
   .contenedor-filtros .buscador-artic label {
     display: -webkit-box;
@@ -2874,6 +2878,55 @@ ul li a {
   }
   .order-page .order-container .container-general .order-upper .order-item-container .product-list-order .articles-list img {
     width: 150px;
+  }
+  .contenedor-filtros {
+    height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .buscador-artic {
+    width: 30%;
+    margin: auto 2rem;
+    position: relative;
+  }
+  .buscador-artic label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+  .buscador-artic label input {
+    padding: 0;
+    margin: 0;
+    padding-left: 3rem;
+    border: none;
+    border-radius: 0;
+  }
+  .buscador-artic label::before {
+    content: "";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.2rem;
+    width: 30px;
+    height: 30px;
+    background-image: url("/icons/3844432_magnifier_search_zoom_icon.svg");
   }
   .container .contenedor-nosotros .contenedor-botones {
     -webkit-box-orient: vertical;
