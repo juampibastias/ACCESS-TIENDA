@@ -15,6 +15,7 @@ function NavBar() {
     const {state, dispatch} = useContext(DataContext)
     const { auth, cart } = state
     const   [isOpen, setIsOpen] = useState(true)
+    const [search,setSearch]=useState("");
 
    
     let locationProtocol ;
@@ -104,6 +105,15 @@ function NavBar() {
             <Link className="text-center"  href="/home">
                 <a className=" text-center"><img src={hostname()+`/../images/logo.png`} className="logo" layout="intrinsic" alt='logo-access' /></a>
             </Link>
+            <div className='contenedor-form-search'>
+            <form autoComplete="off" className=" col-md-4 px-0 buscador-artic">
+                <label>
+                <input type="text" placeholder='Buscá tu producto' className="form-control" list="title_product"
+                value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} />
+                </label>
+                
+            </form>
+            </div>
             <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
