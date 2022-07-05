@@ -149,12 +149,53 @@ $color-2-2:rgb(130, 104, 193);
 //Navbar
 .navbar.bootless-margin {
     background-color: black;
+    justify-content: space-between;
 
     .logo {
         width: 300px;
         height: auto;
         position: relative;
 
+    }
+
+    .contenedor-form-search {
+        width: 30%;
+
+        form {
+            width: 100%;
+
+            label,
+            input {
+
+                width: 100%;
+                margin-bottom: 0;
+            }
+
+            input {
+                padding-left: 30px;
+            }
+
+            label {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    margin-right: 10px;
+                    background-image: url("../public/icons/3844432_magnifier_search_zoom_icon.svg");
+                    width: 20px;
+                    height: 20px;
+                    background-position: center;
+                    top: 10px;
+                    left: 10px;
+                }
+            }
+        }
+    }
+
+    .join-loginsocial {
+        flex-basis: 0;
+        flex-grow: 0;
     }
 }
 
@@ -267,6 +308,16 @@ $color-2-2:rgb(130, 104, 193);
                     color: #000000;
                     letter-spacing: 1.5px;
                 }
+                &.login{
+                    display: flex;
+                    flex-direction: row;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 5px;
+                    }
+                }
+
             }
         }
     }
@@ -783,6 +834,7 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: $color-2;
+    border-top: 3rem solid black;
 
 
     ul {
@@ -1044,7 +1096,7 @@ nav[aria-label="breadcrumb"] {
     align-items: center;
 
     img {
-        width: 90%;
+        width: 80%;
         height: auto;
         object-fit: cover;
         max-height: 700px;
@@ -1055,16 +1107,20 @@ nav[aria-label="breadcrumb"] {
     .contenedor-novedad-texto {
 
 
-        width: 90%;
+        width: 80%;
 
         .title {
             padding-left: 1rem;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
             background-color: $color-2;
             font-weight: 800;
             font-size: 1.5rem;
             color: white;
+
+            h2 {
+                margin: 0;
+            }
         }
 
         .desc {
@@ -1079,7 +1135,7 @@ nav[aria-label="breadcrumb"] {
 
 .contenedor-detallesnovedades {
     .novedad-banner {
-        width: 90%;
+        width: 80%;
         margin: 1rem auto;
 
         img {
@@ -1458,6 +1514,8 @@ a {
 
 //FILTROS
 //-----------
+
+
 .contenedor-filtros {
     display: flex;
     width: 100%;
@@ -3055,6 +3113,11 @@ ul li a {
 }
 
 @media screen and (max-width:500px) {
+    .contenedor-form-search{
+        &.desktop{
+            display: none;
+        }
+    }
 
     //Navbar
     .navbar.bootless-margin {

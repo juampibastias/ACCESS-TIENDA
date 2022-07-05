@@ -32,6 +32,10 @@ function NavBar() {
     }, [isOpen])
    
  
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        router.push(`/?search=${search}`)
+    }
   
     let abrirNav =()=>{
        
@@ -103,13 +107,14 @@ function NavBar() {
             <MiniCartWidget count={cart.length} />
         <nav className="navbar bootless-margin navbar-expand-lg navbar-light text-light">
             <Link className="text-center"  href="/home">
-                <a className=" text-center"><img src={hostname()+`/../images/logo.png`} className="logo" layout="intrinsic" alt='logo-access' /></a>
+                <a className=" text-center"><img src={hostname()+`/../../images/logo.png`} className="logo" layout="intrinsic" alt='logo-access' /></a>
             </Link>
-            <div className='contenedor-form-search'>
-            <form autoComplete="off" className="nav-buscador-artic">
+            <div className='contenedor-form-search desktop'>
+            <form onSubmit={handleSubmit} autoComplete="off" className="nav-buscador-artic">
                 <label>
-                <input type="text" placeholder='Buscá tu producto' className="form-control" list="title_product"
-                value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} />
+                <input type="text" placeholder='Buscá tu producto' className="form-control" 
+                onChange={(e) => setSearch(e.target.value)} 
+               />
                 </label>
                 
             </form>
@@ -117,7 +122,7 @@ function NavBar() {
             <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse justify-content-end" >
+            <div className="collapse navbar-collapse join-loginsocial" >
                 <ul className="navbar-nav social-collapse p-1">
          
                     {/* <li className="nav-item shopping">
@@ -254,13 +259,26 @@ function NavBar() {
                                 </i> CARRITO
                             </a>
                         </Link>
+                       
                     </li>
+                    <li className='nav-item'>
+                        <div className='contenedor-form-search'>
+            <form onSubmit={handleSubmit} autoComplete="off" className="nav-buscador-artic">
+                <label>
+                <input type="text" placeholder='Buscá tu producto' className="form-control" 
+                onChange={(e) => setSearch(e.target.value)} 
+               />
+                </label>
+                
+            </form>
+            </div>
+                        </li>
                     {
                         Object.keys(auth).length === 0 
                         ? <li className="nav-item">
                             <Link href="/signin">
-                                <a style={{color:'white'}} className={"nav-link" + isActive('/signin')}>
-                                    <i className="fas fa-user" aria-hidden="true"></i> Ingresar
+                                <a style={{color:'white'}} className={"login nav-link" + isActive('/signin')}>
+                                    <img src={hostname()+`/../../icons/user.svg`} /> Ingresar
                                 </a>
                             </Link>
                         </li>
