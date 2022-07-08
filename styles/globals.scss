@@ -114,11 +114,12 @@ $color-2-2:rgb(130, 104, 193);
     ul {
         display: flex;
         flex-direction: row;
-        width: 90%;
+        width: 100%;
         justify-content: space-around;
         align-items: center;
         color: white;
         margin: 0;
+        padding: 0 45px;
 
         li {
             list-style: none;
@@ -136,6 +137,7 @@ $color-2-2:rgb(130, 104, 193);
                 letter-spacing: 1px;
                 transition: all 0.3s ease-in-out;
                 color: white;
+                font-size: 20px;
 
                 &:hover {
                     color: #000000;
@@ -150,6 +152,8 @@ $color-2-2:rgb(130, 104, 193);
 .navbar.bootless-margin {
     background-color: black;
     justify-content: space-between;
+    padding-left: 80px;
+    padding-right: 60px;
 
     .logo {
         width: 300px;
@@ -217,8 +221,8 @@ $color-2-2:rgb(130, 104, 193);
     }
 
     .icono-redes {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         display: flex;
 
         img {
@@ -232,8 +236,10 @@ $color-2-2:rgb(130, 104, 193);
         display: flex;
         flex-direction: row;
         color: white !important;
-        margin-right: 3rem;
+        margin-right: 65px;
         align-items: center;
+        font-size: 20px;
+        white-space: nowrap;
 
         img {
             width: 30px;
@@ -303,15 +309,18 @@ $color-2-2:rgb(130, 104, 193);
                 letter-spacing: 1px;
                 transition: all 0.3s ease-in-out;
                 color: white;
+                font-size: 20px;
 
                 &:hover {
                     color: #000000;
                     letter-spacing: 1.5px;
                 }
-                &.login{
+
+                &.login {
                     display: flex;
                     flex-direction: row;
-                    img{
+
+                    img {
                         width: 20px;
                         height: 20px;
                         margin-right: 5px;
@@ -836,6 +845,9 @@ footer {
     background-color: $color-2;
     border-top: 3rem solid black;
 
+    .footer-logo {
+        max-width: 350px;
+    }
 
     ul {
         display: flex;
@@ -1542,6 +1554,7 @@ a {
             flex-direction: row;
             margin: 0;
             padding: 0;
+            margin-right: 1rem;
 
             input {
                 padding: 0;
@@ -2615,6 +2628,7 @@ ul li a {
     //Navbar
     .navbar.bootless-margin {
         background-color: black;
+        padding: 0 15px;
 
         .logo {
             width: 250px;
@@ -3054,6 +3068,10 @@ ul li a {
         height: 300px;
         display: flex;
         flex-direction: column;
+
+        .selector-sort {
+            flex-direction: column;
+        }
     }
 
 
@@ -3113,8 +3131,9 @@ ul li a {
 }
 
 @media screen and (max-width:500px) {
-    .contenedor-form-search{
-        &.desktop{
+
+    .contenedor-form-search {
+        &.desktop {
             display: none;
         }
     }

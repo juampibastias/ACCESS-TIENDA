@@ -143,7 +143,7 @@ function NavBar() {
                             <Link href="/signin">
                                 <a  className={"userSignAvatar nav-link" + isActive('/signin')}>
                                     <img src={hostname()+`/../icons/user.svg`} aria-hidden="true" /> 
-                                    Ingresar
+                                    Iniciar Sesión
                                 </a>
                             </Link>
                         </li>
