@@ -29,7 +29,7 @@ export default function costoEnvio(props) {
 }
 
 //llamada a api provincias y ciudades argentias
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const filePath = path.join(process.cwd(), 'costoEnvio.json');
     
     const jsonData = await fsPromises.readFile(filePath);

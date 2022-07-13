@@ -8,26 +8,19 @@ import banner3 from "../public/OFERTA-access.png";
 import banner4 from "../public/OFERTA-access1.png";
 import separatorImg from "../public/promos/ingreso.jpeg";
 import separatorImg2 from "../public/promos/ingreso_2.jpeg";
-
 import separatorImg3 from "../public/promos/ingreso_3.jpeg";
-
-
-
-
-
 import { Carousel } from "react-bootstrap";
-
 import { useState, useContext, useEffect } from "react";
 import { DataContext } from "../store/GlobalState";
-
 import { getData } from "../utils/fetchData";
 import ProductHome from "../components/product/ProductHome";
 import { useRouter } from "next/router";
 import SeparatorImage from "../components/separatorImg";
-//import MiniCartWidget from '../components/widget/minicart'
+
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products);
+  const [novedades, setNovedades] = useState(props.novedades);
 
   const [isCheck, setIsCheck] = useState(false);
   const [page, setPage] = useState(1);
@@ -36,8 +29,7 @@ const Home = (props) => {
   const { state, dispatch } = useContext(DataContext);
   const { auth } = state;
 
-  /*   const [novedades, setNovedades] = useState(props.novedades)
-   */
+
   useEffect(() => {
     setProducts(props.products);
   }, [props.products]);
@@ -99,8 +91,6 @@ const Home = (props) => {
         </Carousel.Item>
       </Carousel>
 
-      {/*       <NovedadesHome />
-       */}
       {auth.user && auth.user.role === "admin" && (
         <div
           className="delete_all btn btn-danger mt-2"
@@ -118,7 +108,8 @@ const Home = (props) => {
           </button>
         </div>
       )}
-      <SeparatorImage imagen={separatorImg} imagen2={separatorImg2} imagen3={separatorImg3}  title="aah"/>
+         
+      {/* <SeparatorImage imagen={separatorImg} imagen2={separatorImg2} imagen3={separatorImg3}  title="aah"/> */}
 
       <div className="featured">
         <h2>Nuevos Ingresos</h2>

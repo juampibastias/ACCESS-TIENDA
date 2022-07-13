@@ -8,20 +8,29 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import pibeDeFondo from "../public/images/pibeDeFondo.png";
 import axios from "axios";
+import path from "path";
+import fsPromises from "fs/promises";
+
 
 //Variables para axios mercadopago
 let itemMp;
 let itemMpArray = [];
+let totalConEnvio;
+let filePath;
 
-const Cart = () => {
+let jsonData;
 
-  //let tarifaEnvios = require('/costoEnvio.json')
+let objectData = [];
+
+const Cart = (props) => {
+  const nombresProvincias = props.provincias.map((tarifa) => tarifa.nombre);
+  const costoProvincias = props.provincias.map((tarifa) => tarifa.costo);
+  const [tarifaProvincia, setTarifaProvincia] = useState(-1);
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
 
   const [total, setTotal] = useState(0);
-  //const [costo, setCosto] = useState(0);
 
   const [provincia, setProvincia] = useState("");
   const [ciudad, setCiudad] = useState("");
@@ -32,6 +41,14 @@ const Cart = () => {
   const [color, setColor] = useState("");
   const [callback, setCallback] = useState(false);
   const router = useRouter();
+
+
+  const handlerTarifaProvincia = function (e) {
+    const option = e.target.value;
+    console.log(option)
+
+    setTarifaProvincia(option)
+  }
 
   useEffect(() => {
     const getTotal = () => {
@@ -100,9 +117,11 @@ const Cart = () => {
 
       itemMp = {
         title: item.title,
-        unit_price: item.price,
+        unit_price: totalConEnvio,
         quantity: item.quantity,
       };
+
+      console.log(itemMp)
 
       itemMpArray.push(itemMp);
     }
@@ -116,9 +135,7 @@ const Cart = () => {
       })
 
       .then((response) => {
-        
         window.open(response.data.data, "_self");
-        
       });
 
     if (newCart.length < cart.length) {
@@ -223,29 +240,13 @@ const Cart = () => {
                 className="form-control mb-2"
                 onChange={(e) => setProvincia(e.target.value)}
               >
-                <option value="0">Buenos Aires</option>
-                <option value="1">CABA</option>
-                <option value="2">Catamarca</option>
-                <option value="3">Chaco</option>
-                <option value="4">Chubut</option>
-                <option value="5">Cordoba</option>
-                <option value="6">Entre Rios</option>
-                <option value="7">Formosa</option>
-                <option value="8">Jujuy</option>
-                <option value="9">La Pampa</option>
-                <option value="10">La Rioja</option>
-                <option value="11">Mendoza</option>
-                <option value="12">Misiones</option>
-                <option value="13">Neuquen</option>
-                <option value="14">Rio Negro</option>
-                <option value="15">Salta</option>
-                <option value="16">San Juan</option>
-                <option value="17">San Luis</option>
-                <option value="18">Santa Cruz</option>
-                <option value="19">Santa Fe</option>
-                <option value="20">Santiago del Estero</option>
-                <option value="21">Tierra del Fuego</option>
-                <option value="22">Tucuman</option>
+                {nombresProvincias.map((item, i) => (
+                  <option value={i}>
+                    {
+                      item
+                    }
+                  </option>
+                ))}
               </select>
 
               <label htmlFor="ciudad">Ciudad</label>
@@ -331,14 +332,35 @@ const Cart = () => {
                 <h4>Total Articulos</h4>
                 <h4>$ {total}</h4>
               </div>
-              <div className="subtotal-item"
+              <div className="subtotal-item">
+              <label htmlFor="provincia">Envío</label>
+              <select
+                name="provincia"
+                id="provincia"
+                className="form-control mb-2"
+                onChange={(e) => setProvincia(e.target.value)}
+                onClick={handlerTarifaProvincia}
               >
-                <h4>Envio</h4>
-                <h4>$ {0}</h4>
+                {nombresProvincias.map((item, i) => (
+                  <option value={i}>
+                    {
+                      item
+                    }
+                  </option>
+                ))}
+              </select>
+                <h4>$ {
+                  costoProvincias[tarifaProvincia]
+                  }</h4>
               </div>
             </div>
             <h3>
-              Total: <span className="text-danger">${total}</span>
+              Total: <span className="text-danger">${
+              
+              totalConEnvio = total + costoProvincias[tarifaProvincia]
+              
+              }</span>
+              
             </h3>
           </div>
           <div className="contenedor-boton">
@@ -358,6 +380,16 @@ const Cart = () => {
   );
 };
 
+export async function getServerSideProps() {
+  filePath = path.join(process.cwd(), "costoEnvio.json");
 
+  jsonData = await fsPromises.readFile(filePath);
+
+  objectData = JSON.parse(jsonData);
+
+  return {
+    props: objectData,
+  };
+}
 
 export default Cart;
