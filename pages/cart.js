@@ -23,13 +23,17 @@ let jsonData;
 let objectData = [];
 
 const Cart = (props) => {
+ 
   const nombresProvincias = props.provincias.map((tarifa) => tarifa.nombre);
   const costoProvincias = props.provincias.map((tarifa) => tarifa.costo);
+ 
+  const cartSelect = props.provincias.slice(1,props.provincias.length).map((tarifa) => tarifa.nombre);
+console.log(nombresProvincias)
   const [tarifaProvincia, setTarifaProvincia] = useState(-1);
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
-
+ 
   const [total, setTotal] = useState(0);
 
   const [provincia, setProvincia] = useState("");
@@ -51,6 +55,7 @@ const Cart = (props) => {
   }
 
   useEffect(() => {
+     
     const getTotal = () => {
       const res = cart.reduce((prev, item) => {
         return prev + item.price * item.quantity;
@@ -63,6 +68,7 @@ const Cart = (props) => {
   }, [cart]);
 
   useEffect(() => {
+    
     const cartLocal = JSON.parse(localStorage.getItem("__next__cart01__devat"));
     if (cartLocal && cartLocal.length > 0) {
       let newArr = [];
@@ -240,7 +246,7 @@ const Cart = (props) => {
                 className="form-control mb-2"
                 onChange={(e) => setProvincia(e.target.value)}
               >
-                {nombresProvincias.map((item, i) => (
+                {cartSelect.map((item, i) => (
                   <option value={i}>
                     {
                       item
@@ -333,7 +339,14 @@ const Cart = (props) => {
                 <h4>$ {total}</h4>
               </div>
               <div className="subtotal-item">
-              <label htmlFor="provincia">Envío</label>
+                <p>Calcular costo de envio</p>
+             <div className="text-containers">
+              
+             <label htmlFor="provincia">Costo de envío</label>
+              <h4>$ {
+                  costoProvincias[tarifaProvincia]
+                  }</h4>
+             </div>
               <select
                 name="provincia"
                 id="provincia"
@@ -349,9 +362,7 @@ const Cart = (props) => {
                   </option>
                 ))}
               </select>
-                <h4>$ {
-                  costoProvincias[tarifaProvincia]
-                  }</h4>
+              
               </div>
             </div>
             <h3>

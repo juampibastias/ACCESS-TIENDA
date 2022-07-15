@@ -601,6 +601,40 @@ $color-2-2:rgb(130, 104, 193);
                         flex-direction: row;
                         justify-content: space-between;
                         align-items: center;
+                        
+
+                        &:nth-child(2) {
+                            border-top: 1px solid $color-2;
+                            flex-direction: column;
+                            p{
+                                
+                                width: 100%;
+                                text-align: left;
+                                padding-left: 0.5rem;
+                            }
+
+                            select {
+                                width: 98%;
+                                margin: 0 auto;
+                                border: 1px solid $color-2;
+                                color: black;
+                                option{
+                                    color: black;
+                                }
+                            }
+
+                            .text-containers {
+                                
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                width: 100%;
+                                padding: 0 0.5rem;
+                                padding-top: 1.5rem;
+                            }
+
+                            font-weight: 600;
+                        }
                     }
                 }
             }
