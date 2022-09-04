@@ -3132,6 +3132,18 @@ ul li a {
   nav[aria-label="breadcrumb"] {
     display: none;
   }
+  .profile_page .general-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile_page .general-container .contenedor-data-profile {
+    width: 90%;
+  }
+  .profile_page .general-container .contenedor-tabla-profile {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 500px) {

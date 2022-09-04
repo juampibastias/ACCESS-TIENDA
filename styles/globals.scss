@@ -601,13 +601,14 @@ $color-2-2:rgb(130, 104, 193);
                         flex-direction: row;
                         justify-content: space-between;
                         align-items: center;
-                        
+
 
                         &:nth-child(2) {
                             border-top: 1px solid $color-2;
                             flex-direction: column;
-                            p{
-                                
+
+                            p {
+
                                 width: 100%;
                                 text-align: left;
                                 padding-left: 0.5rem;
@@ -618,13 +619,14 @@ $color-2-2:rgb(130, 104, 193);
                                 margin: 0 auto;
                                 border: 1px solid $color-2;
                                 color: black;
-                                option{
+
+                                option {
                                     color: black;
                                 }
                             }
 
                             .text-containers {
-                                
+
                                 display: flex;
                                 flex-direction: row;
                                 justify-content: space-between;
@@ -3161,6 +3163,22 @@ ul li a {
     //breadcrumbs
     nav[aria-label="breadcrumb"] {
         display: none;
+    }
+
+    .profile_page {
+
+
+        .general-container {
+            flex-direction: column;
+
+            .contenedor-data-profile {
+                width: 90%;
+            }
+
+            .contenedor-tabla-profile {
+                width: 90%;
+            }
+        }
     }
 }
 
