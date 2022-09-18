@@ -1,9 +1,14 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getData } from "../../utils/fetchData";
+import useWindowSize from "../../components/getwindowSize";
 
 const DetailNovedades = (props) => {
   const [novedades] = useState(props.novedad)
+  const size = useWindowSize();
+
+
+ 
   
   return (
     <div className="contenedor-detallesnovedades">
@@ -39,7 +44,8 @@ const DetailNovedades = (props) => {
       </div>
       </div>
       <div className="novedad-banner">
-      <img src="../OFERTA-access.png"></img>
+      {size.width < 764  ?  <img src="../Eiffel_Tower_Vertical.JPG"></img> :  <img src="../OFERTA-access.png"></img> }
+     
       </div>
     </div>
   );

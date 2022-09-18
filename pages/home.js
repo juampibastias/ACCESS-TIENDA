@@ -6,6 +6,11 @@ import banner1 from "../public/images/banner1.png";
 import banner2 from "../public/images/banner2.png";
 import banner3 from "../public/OFERTA-access.png";
 import banner4 from "../public/OFERTA-access1.png";
+import bannerMobile from "../public/images/Eiffel_Tower_Vertical.JPG";
+import banner1Mobile from "../public/images/Eiffel_Tower_Vertical.JPG";
+import banner2Mobile from "../public/images/Eiffel_Tower_Vertical.JPG";
+import banner3Mobile from "../public/Eiffel_Tower_Vertical.JPG";
+import banner4Mobile from "../public/Eiffel_Tower_Vertical.JPG";
 import separatorImg from "../public/promos/ingreso.jpeg";
 import separatorImg2 from "../public/promos/ingreso_2.jpeg";
 import separatorImg3 from "../public/promos/ingreso_3.jpeg";
@@ -16,6 +21,7 @@ import { getData } from "../utils/fetchData";
 import ProductHome from "../components/product/ProductHome";
 import { useRouter } from "next/router";
 import SeparatorImage from "../components/separatorImg";
+import useWindowSize from "../components/getwindowSize";
 
 
 const Home = (props) => {
@@ -28,6 +34,8 @@ const Home = (props) => {
 
   const { state, dispatch } = useContext(DataContext);
   const { auth } = state;
+
+  const size = useWindowSize();
 
 
   useEffect(() => {
@@ -75,19 +83,27 @@ const Home = (props) => {
       </Head>
       <Carousel prevLabel="" nextLabel="">
         <Carousel.Item>
-          <Image className="d-block w-100" src={banner1} alt="First slide" />
+        {size.width < 760 ?   <Image className="d-block w-100" src={banner1Mobile} alt="First slide" /> :   <Image className="d-block w-100" src={banner1} alt="First slide" />}
         </Carousel.Item>
         <Carousel.Item>
-          <Image className="d-block w-100" src={banner2} alt="Second slide" />
+        {size.width < 760 ?   <Image className="d-block w-100" src={banner2Mobile} alt="Second slide" /> : <Image className="d-block w-100" src={banner2} alt="Second slide" />}
+
+          
         </Carousel.Item>
         <Carousel.Item>
-          <Image className="d-block w-100" src={banner} alt="Third slide" />
+        {size.width < 760 ?  <Image className="d-block w-100" src={bannerMobile} alt="Third slide" /> : <Image className="d-block w-100" src={banner} alt="Third slide" />}
+
+          
         </Carousel.Item>
         <Carousel.Item>
-          <Image className="d-block w-100" src={banner3} alt="fourth slide" />
+        {size.width < 760 ?  <Image className="d-block w-100" src={banner3Mobile} alt="fourth slide" /> :  <Image className="d-block w-100" src={banner3} alt="fourth slide" />}
+
+         
         </Carousel.Item>
         <Carousel.Item>
-          <Image className="d-block w-100" src={banner4} alt="fifth slide" />
+        {size.width < 760 ?  <Image className="d-block w-100" src={banner4Mobile} alt="fifth slide" /> :  <Image className="d-block w-100" src={banner4} alt="fifth slide" />}
+
+         
         </Carousel.Item>
       </Carousel>
 
