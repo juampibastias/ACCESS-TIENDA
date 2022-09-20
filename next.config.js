@@ -8,5 +8,7 @@ module.exports = {
         "CLOUD_NAME": "almacen-on-line",
         "CLOUD_API": "https://api.cloudinary.com/v1_1/amlacen-on-line/image/upload",
         "ACCESS_TOKEN_MP": "APP_USR-8620031361315709-052115-be4bb5cb5110198badc46f49ee6ef79e-1127950295"
-    },
+    }
   }
+  
+  

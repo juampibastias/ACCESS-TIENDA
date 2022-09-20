@@ -11,7 +11,6 @@ import axios from "axios";
 import path from "path";
 import fsPromises from "fs/promises";
 
-
 //Variables para axios mercadopago
 let itemMp;
 let itemMpArray = [];
@@ -23,17 +22,18 @@ let jsonData;
 let objectData = [];
 
 const Cart = (props) => {
- 
   const nombresProvincias = props.provincias.map((tarifa) => tarifa.nombre);
   const costoProvincias = props.provincias.map((tarifa) => tarifa.costo);
- 
-  const cartSelect = props.provincias.slice(1,props.provincias.length).map((tarifa) => tarifa.nombre);
-console.log(nombresProvincias)
+
+  const cartSelect = props.provincias
+    .slice(1, props.provincias.length)
+    .map((tarifa) => tarifa.nombre);
+  console.log(nombresProvincias);
   const [tarifaProvincia, setTarifaProvincia] = useState(-1);
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
- 
+
   const [total, setTotal] = useState(0);
 
   const [provincia, setProvincia] = useState("");
@@ -46,16 +46,14 @@ console.log(nombresProvincias)
   const [callback, setCallback] = useState(false);
   const router = useRouter();
 
-
   const handlerTarifaProvincia = function (e) {
     const option = e.target.value;
-    console.log(option)
+    console.log(option);
 
-    setTarifaProvincia(option)
-  }
+    setTarifaProvincia(option);
+  };
 
   useEffect(() => {
-     
     const getTotal = () => {
       const res = cart.reduce((prev, item) => {
         return prev + item.price * item.quantity;
@@ -68,7 +66,6 @@ console.log(nombresProvincias)
   }, [cart]);
 
   useEffect(() => {
-    
     const cartLocal = JSON.parse(localStorage.getItem("__next__cart01__devat"));
     if (cartLocal && cartLocal.length > 0) {
       let newArr = [];
@@ -127,7 +124,7 @@ console.log(nombresProvincias)
         quantity: item.quantity,
       };
 
-      console.log(itemMp)
+      console.log(itemMp);
 
       itemMpArray.push(itemMp);
     }
@@ -180,11 +177,14 @@ console.log(nombresProvincias)
 
   if (cart.length === 0)
     return (
-      <Image
-        className="img-responsive w-100"
-        src={pibeDeFondo}
-        alt="not empty"
-      />
+      <div>
+        <h1 style={{textAlign:"center", marginTop:"10px"}}>CARRITO VACIO</h1>
+        <Image
+          className="img-responsive w-100"
+          src={pibeDeFondo}
+          alt="not empty"
+        />
+      </div>
     );
 
   return (
@@ -247,11 +247,7 @@ console.log(nombresProvincias)
                 onChange={(e) => setProvincia(e.target.value)}
               >
                 {cartSelect.map((item, i) => (
-                  <option value={i}>
-                    {
-                      item
-                    }
-                  </option>
+                  <option value={i}>{item}</option>
                 ))}
               </select>
 
@@ -340,38 +336,28 @@ console.log(nombresProvincias)
               </div>
               <div className="subtotal-item">
                 <p>Calcular costo de envio</p>
-             <div className="text-containers">
-              
-             <label htmlFor="provincia">Costo de envío</label>
-              <h4>$ {
-                  costoProvincias[tarifaProvincia]
-                  }</h4>
-             </div>
-              <select
-                name="provincia"
-                id="provincia"
-                className="form-control mb-2"
-                onChange={(e) => setProvincia(e.target.value)}
-                onClick={handlerTarifaProvincia}
-              >
-                {nombresProvincias.map((item, i) => (
-                  <option value={i}>
-                    {
-                      item
-                    }
-                  </option>
-                ))}
-              </select>
-              
+                <div className="text-containers">
+                  <label htmlFor="provincia">Costo de envío</label>
+                  <h4>$ {costoProvincias[tarifaProvincia]}</h4>
+                </div>
+                <select
+                  name="provincia"
+                  id="provincia"
+                  className="form-control mb-2"
+                  onChange={(e) => setProvincia(e.target.value)}
+                  onClick={handlerTarifaProvincia}
+                >
+                  {nombresProvincias.map((item, i) => (
+                    <option value={i}>{item}</option>
+                  ))}
+                </select>
               </div>
             </div>
             <h3>
-              Total: <span className="text-danger">${
-              
-              totalConEnvio = total + costoProvincias[tarifaProvincia]
-              
-              }</span>
-              
+              Total: {" "}
+              <span className="text-danger">
+                 ${(totalConEnvio = total + costoProvincias[tarifaProvincia])}
+              </span>
             </h3>
           </div>
           <div className="contenedor-boton">
