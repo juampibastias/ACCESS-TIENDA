@@ -53,7 +53,7 @@ const ProductHome = ({product, handleCheck}) => {
                 onChange={() => handleCheck(product._id)} />
             }
             <Link  href={`product/${product._id}`}>
-            <a><img className="card-img-top" src={product.images[0].url} alt={product.images[0].url} /></a></Link>
+            <a><img className="card-img-top" src={product.images[0]} alt={product.images[0]} /></a></Link>
             <div className="card-body">
                 <Link href={`product/${product._id}`}>
                     <a><h5 className="card-title text-capitalize" title={product.title}>

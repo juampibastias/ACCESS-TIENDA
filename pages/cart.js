@@ -28,7 +28,6 @@ const Cart = (props) => {
   const cartSelect = props.provincias
     .slice(1, props.provincias.length)
     .map((tarifa) => tarifa.nombre);
-  console.log(nombresProvincias);
   const [tarifaProvincia, setTarifaProvincia] = useState(-1);
 
   const { state, dispatch } = useContext(DataContext);
@@ -48,7 +47,6 @@ const Cart = (props) => {
 
   const handlerTarifaProvincia = function (e) {
     const option = e.target.value;
-    console.log(option);
 
     setTarifaProvincia(option);
   };
@@ -123,8 +121,6 @@ const Cart = (props) => {
         unit_price: totalConEnvio,
         quantity: item.quantity,
       };
-
-      console.log(itemMp);
 
       itemMpArray.push(itemMp);
     }

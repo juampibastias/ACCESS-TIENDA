@@ -6,9 +6,6 @@ import ProductItem from "../components/product/ProductItem";
 import filterSearch from "../utils/filterSearch";
 import { useRouter } from "next/router";
 import Filter from "../components/Filter";
-import Link from 'next/link'
-import MiniCartWidget from "../components/widget/minicart";
-import path from "path";
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products);
@@ -123,16 +120,14 @@ const Home = (props) => {
         )}
       </div>
 
-      {props.result < page * 6 ? (
-        ""
-      ) : (
+      {props.result < page * 20 ? "" :
         <button
           className="btn btn-outline-info d-block mx-auto mb-4"
           onClick={handleLoadmore}
         >
           Mostrar más
         </button>
-      )}
+      }
     </div>
   );
 };

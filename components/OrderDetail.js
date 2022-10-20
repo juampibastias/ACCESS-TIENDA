@@ -105,7 +105,7 @@ const OrderDetail = ({ orderDetail, state, dispatch }) => {
                 <h3>Lista de artículos</h3>
                 {order.cart.map((item) => (
                   <div className="articles-list" key={item._id}>
-                    <img src={item.images[0].url} alt={item.images[0].url} />
+                    <img src={item.images[0]} alt={item.images[0]} />
                     <div className="title-price-qty">
                       {" "}
                       <h5 className="flex-fill  px-3 m-0">

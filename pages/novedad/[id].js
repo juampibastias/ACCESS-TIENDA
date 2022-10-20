@@ -23,7 +23,7 @@ const DetailNovedades = (props) => {
         <title>DETALLE-NOVEDADES</title>
       </Head>
       <div className="contenedor-novedad">
-        <img src={novedades.images[0].url} alt={novedades.images[0].url} className=""
+        <img src={novedades.images[0]} alt={novedades.images[0]} className=""
         />
 
       <div className="contenedor-novedad-texto">
@@ -44,7 +44,7 @@ const DetailNovedades = (props) => {
       </div>
       </div>
       <div className="novedad-banner">
-      {size.width < 764  ?  <img src="../Eiffel_Tower_Vertical.JPG"></img> :  <img src="../OFERTA-access.png"></img> }
+      {size.width < 764  ?  <img src="../../public/images/BANNER-MOBILE.png"></img> :  <img src="../OFERTA-access.png"></img> }
      
       </div>
     </div>

@@ -39,14 +39,14 @@ const DetailProduct = (props) => {
       </nav>
            <div className='pdp'>
            <div className="contenedor-img-desc ">
-                <img src={ product.images[tab].url } alt={ product.images[tab].url }
+                <img src={ product.images[tab] } alt={ product.images[tab] }
                 className=" img-thumbnail rounded"
                 />
 
                 <div className="thumbnail-pdp mx-0" style={{cursor: 'pointer'}} >
 
                     {product.images.map((img, index) => (
-                        <img key={index} src={img.url} alt={img.url}
+                        <img key={index} src={img} alt={img}
                         className={`img-thumbnail rounded ${isActive(index)}`}
                         
                         onClick={() => setTab(index)} />

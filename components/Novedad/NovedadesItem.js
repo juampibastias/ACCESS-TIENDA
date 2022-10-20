@@ -54,7 +54,7 @@ const NovedadesItem = ({novedad, handleCheck}) =>{
                 onChange={() => handleCheck(novedad._id)} />
             }
         <Link href={`novedad/${novedad._id}`}>
-        <img className="card-img-top" src={novedad.images[0].url} alt={novedad.images[0].url} />
+        <img className="card-img-top" src={novedad.images[0]} alt={novedad.images[0]} />
         </Link>
         
         <div className="card-body-custom">
