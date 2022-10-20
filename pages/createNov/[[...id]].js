@@ -5,7 +5,6 @@ import { imageUpload } from "../../utils/imageUpload";
 import { postData, getData, putData } from "../../utils/fetchData";
 import { useRouter } from "next/router";
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { TextEditor } from "../../components/TextEditor";
 
 const NovedadesManager = () => {
   const initialState = {
@@ -132,8 +131,6 @@ const NovedadesManager = () => {
     return dispatch({ type: "NOTIFY", payload: { success: res.msg } });
   };
 
-  console.log(TextEditor)
-
   return (
     <div className="products_manager">
       <Head>
@@ -143,7 +140,7 @@ const NovedadesManager = () => {
       <form onSubmit={handleSubmit}>
         <div className="items-form">
           <label for="name">Titulo</label>
-          <TextEditor
+          <input
             type="text"
             name="name"
             value={name}
@@ -152,7 +149,7 @@ const NovedadesManager = () => {
             onChange={handleChangeInput}
           />
           <label for="descrip">Subtitulo</label>
-          <TextEditor
+          <input
             theme="snow"
             name="descrip"
             id="descrip"
@@ -164,7 +161,7 @@ const NovedadesManager = () => {
             value={descrip}
           />
           <label for="detail">Texto</label>
-          <TextEditor
+          <input
             name="detail"
             id="detail"
             cols="30"
