@@ -23,7 +23,7 @@ const DetailNovedades = (props) => {
         <title>DETALLE-NOVEDADES</title>
       </Head>
       <div className="contenedor-novedad">
-        <img src={novedades.images[0]} alt={novedades.images[0]} className=""
+        <img src={novedades.images[0].url} alt={novedades.images[0].url} className=""
         />
 
       <div className="contenedor-novedad-texto">

@@ -12,7 +12,7 @@ export const Sucursales = () => {
       <div className="card-container">
         <div className="card " style={{width: 90+"%"}}>
           <img
-            src="images/rivadavia.PNG"
+            src="images/localRiva.jpg"
             className="card-img-top"
             alt="..."
           />

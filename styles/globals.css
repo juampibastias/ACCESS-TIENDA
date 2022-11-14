@@ -992,6 +992,7 @@ body {
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
+     
 }
 
 .contenedor-servicios .servicio-items .servicio-item .text {

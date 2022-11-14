@@ -20,6 +20,8 @@ import ProductHome from "../components/product/ProductHome";
 import { useRouter } from "next/router";
 import SeparatorImage from "../components/separatorImg";
 import useWindowSize from "../components/getwindowSize";
+import Novedades from "./novedades";
+import Servicios from "./servicios"
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products);
@@ -149,18 +151,7 @@ const Home = (props) => {
           )}
         </div>
       </div>
-
-      <div></div>
-      {props.result < page * 6 ? (
-        ""
-      ) : (
-        <button
-          className="btn btn-outline-info d-block mx-auto mb-4"
-          onClick={handleLoadmore}
-        >
-          Mostrar más
-        </button>
-      )}
+      <Servicios />
     </div>
   );
 };
