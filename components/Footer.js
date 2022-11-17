@@ -25,9 +25,9 @@ const Footer = () => {
   
           <li>
             <h5>Dirección</h5>
-            <p>Rivadavia, W.Nuñez 597, Tel: (0263) 4445900 - 4445901</p>
-            <p>Junin, Av. Mitre 8, Tel: (0263) 4498375</p>
-            <p>San Martin, 25 de Mayo 252, Tel: (0263) 4428808 - 4420051</p>
+            <p>Rivadavia, W.Nuñez 597, <b>Tel: </b>(0263) 4445900 - 4445901</p>
+            <p>Junin, Av. Mitre 8, <b> Tel:</b> (0263) 4498375</p>
+            <p>San Martin, 25 de Mayo 252, <b>Tel</b> (0263) 4428808 - 4420051</p>
           </li>
         </ul>
   
