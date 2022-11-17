@@ -9,9 +9,9 @@ import Accordion from 'react-bootstrap/Accordion';
 const Footer = () => {
   const size = useWindowSize();
     return(
-        <footer className="footer">
+        <footer className="footer" style={{paddingTop: "60px"}}>
         <div className="footer-logo">
-          <Image className="logo-blanco" src={imagenLogo} alt="access" />
+          <Image className="logo-blanco" src={imagenLogo} alt="access"/>
         </div>
   
         {size.width > 760 ? ( <ul >
