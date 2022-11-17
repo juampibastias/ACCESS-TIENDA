@@ -118,7 +118,7 @@ const Home = (props) => {
       {auth.user && auth.user.role === "admin" && (
         <div
           className="delete_all btn btn-danger mt-2"
-          style={{ marginBottom: "-10px" }}
+          style={{ marginBottom: "10px", marginLeft: "10px" }}
         >
           <input type="checkbox" checked={isCheck} onChange={handleCheckALL} />
 

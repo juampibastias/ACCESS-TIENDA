@@ -23,10 +23,9 @@ const ProductItem = ({product, handleCheck}) => {
     const adminLink = () => {
         return(
             <>
-                <Link href={`create/${product._id}`}>
-                    <a className="btn btn-info"
-                    style={{marginRight: '5px', flex: 1}}>Editar</a>
-                </Link>
+                <button href={`create/${product._id}`} className="btn btn-info"
+                    style={{marginRight: '5px', flex: 1}}> Editar
+                </button>
                 <button className="btn btn-danger"
                 style={{marginLeft: '5px', flex: 1}}
                 data-toggle="modal" data-target="#exampleModal"
