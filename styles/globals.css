@@ -237,6 +237,26 @@ body {
   margin: 1rem 0;
 }
 
+.social-collapse.navbar-nav .dropdown.usermenu {
+  margin-right: 2rem;
+}
+
+.social-collapse.navbar-nav .dropdown.usermenu .dropdown-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .social-collapse.navbar-nav .cartitems-counter {
   background-color: #534080;
   padding: 5px 8px;
@@ -978,9 +998,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid grey;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 400px;
   background-color: #534080;
   padding: 1rem 0;
@@ -992,7 +1012,6 @@ body {
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
-     
 }
 
 .contenedor-servicios .servicio-items .servicio-item .text {
@@ -1080,12 +1099,31 @@ footer ul li ul li {
   color: white;
 }
 
+footer ul li ul li:nth-last-child(1) {
+  white-space: nowrap;
+}
+
 footer ul li ul li a:hover {
   color: white;
 }
 
 footer .copyright-footer {
   color: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 0;
+  margin-top: auto;
+  padding: 1rem 0;
+  font-weight: bold;
 }
 
 nav[aria-label="breadcrumb"] {
@@ -1847,10 +1885,11 @@ a {
   margin: 0 auto;
   background-color: #8268c1;
   padding: 2rem;
+  gap: 2rem;
 }
 
 .contenedor-filtros .categorias select {
-  border-radius: 0;
+  border-radius: 0.2rem;
 }
 
 .contenedor-filtros .buscador-artic {
@@ -1905,19 +1944,26 @@ a {
           flex-direction: row;
   width: auto;
   border: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
 }
 
 .contenedor-filtros .selector-sort:before {
   content: "Mostrar por: ";
   font-size: 1.2rem;
-  display: block;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  white-space: nowrap;
   color: white;
 }
 
 .contenedor-filtros .selector-sort select {
   border: none;
-  border-radius: 0;
+  border-radius: 0.2rem;
 }
 
 .order-page .btn-back {
@@ -2442,9 +2488,6 @@ ul li a {
     width: 80%;
     margin-bottom: 1rem;
   }
-  .contenedor-filtros .categorias select {
-    border-radius: 0;
-  }
   .contenedor-filtros .buscador-artic {
     width: 80%;
     margin: auto 2rem;
@@ -2495,17 +2538,6 @@ ul li a {
             flex-direction: row;
     width: auto;
     border: none;
-  }
-  .contenedor-filtros .selector-sort:before {
-    content: "Mostrar por: ";
-    font-size: 1.2rem;
-    display: block;
-    width: 100%;
-    color: white;
-  }
-  .contenedor-filtros .selector-sort select {
-    border: none;
-    border-radius: 0;
   }
   .signin-form {
     width: 80%;
@@ -2773,6 +2805,18 @@ ul li a {
 }
 
 @media screen and (max-width: 768px) {
+  .contenedor-servicios .servicio-items .servicio-item img {
+    width: 20%;
+    height: 20%;
+    min-width: 50px;
+    min-height: 50px;
+    padding-left: 1rem;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .contenedor-servicios .servicio-items .servicio-item .text h4 {
+    font-size: 4vw;
+  }
   .navbar.bootless-margin {
     background-color: black;
     padding: 0 15px;
@@ -3131,6 +3175,72 @@ ul li a {
   .profile_page .general-container .contenedor-tabla-profile {
     width: 90%;
   }
+  footer {
+    min-height: auto;
+  }
+  footer .accordion {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+  }
+  footer .accordion .accordion-item .accordion-header button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .accordion .accordion-item .accordion-header button[aria-expanded="true"]:after {
+    content: '▼';
+    font-size: 1rem;
+    margin: 0;
+    color: white;
+    padding-left: 0.2rem;
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+  footer .accordion .accordion-item .accordion-header button h5 {
+    margin: 0;
+  }
+  footer .accordion .accordion-item .accordion-header button:after {
+    content: '▼';
+    font-size: 1rem;
+    margin: 0;
+    color: white;
+    padding-left: 0.2rem;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  footer .accordion .accordion-item .accordion-header button:focus {
+    outline: none;
+  }
+  footer .accordion .accordion-item .accordion-collapse .accordion-body li,
+  footer .accordion .accordion-item .accordion-collapse .accordion-body p {
+    padding-left: 1rem;
+    color: white;
+  }
+  footer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -3403,6 +3513,12 @@ ul li a {
   }
   .container .mp-pending p,
   .container .mp-error p {
+    font-size: 1rem;
+  }
+  .contenedor-servicios .servicio-items {
+    width: 100%;
+  }
+  .contenedor-servicios .servicio-items .servicio-item .text h4 {
     font-size: 1rem;
   }
 }

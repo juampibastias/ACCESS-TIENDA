@@ -32,13 +32,13 @@ const Filter = ({state}) => {
     return (
         <div className="contenedor-filtros">
 
-<form autoComplete="off" className=" col-md-4 px-0 buscador-artic">
+{ /*<form autoComplete="off" className=" col-md-4 px-0 buscador-artic">
                 <label>
                 <input type="text" placeholder='Buscá tu producto' className="form-control" list="title_product"
                 value={search.toLowerCase()} onChange={e => setSearch(e.target.value)} />
                 </label>
                 
-            </form>
+    </form> */}
             <div className="  px-0 categorias ">
                 <select className="custom-select text-capitalize"
                 value={category} onChange={handleCategory}>
