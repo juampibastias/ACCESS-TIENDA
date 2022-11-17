@@ -34,7 +34,7 @@ export const Servicios = () => {
           </div>
         </a>
         <a className='servicio-item' href="https://wa.me/5492634617852">
-          <img style={{marginLeft: '15px'}} src="icons/eye.svg" alt="" />
+          <img src="icons/eye.svg" alt="" />
           <div className='text'>
             <h4>Sistema de Cámaras de Seguridad</h4>
             <p></p>
@@ -49,7 +49,7 @@ export const Servicios = () => {
         </a>
         <a className='servicio-item' href="https://wa.me/5492634617852">
           <img src="icons/venta.svg" alt="" />
-          <div className='text' style={{marginRight: '60px'}}>
+          <div className='text' >
             <h4>Ventas de Equipo</h4>
             <p></p>
           </div>
