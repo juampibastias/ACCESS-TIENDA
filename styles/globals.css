@@ -109,6 +109,29 @@ body {
   color: white;
 }
 
+.loadcontentbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  background-color: #8268c1;
+  font-family: sansation, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-bottom: 3rem;
+}
+
+.loadcontentbtn:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  box-shadow: 16px 16px 11px -9px rgba(33, 5, 31, 0.45);
+  -webkit-box-shadow: 16px 16px 11px -9px rgba(33, 5, 31, 0.45);
+  -moz-box-shadow: 16px 16px 11px -9px rgba(33, 5, 31, 0.45);
+  background-color: #534080;
+  color: white;
+}
+
 .links-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -998,7 +1021,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid grey;
-  border-radius: 10px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -1011,15 +1033,20 @@ body {
 .contenedor-servicios .servicio-items .servicio-item img {
   width: 100px;
   height: 100px;
-  margin-left: 15px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .contenedor-servicios .servicio-items .servicio-item .text {
   margin-left: 1rem;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: white;
+}
+
+.contenedor-servicios .servicio-items .servicio-item .text h4 {
+  margin-bottom: 0;
 }
 
 footer {
@@ -2485,6 +2512,8 @@ ul li a {
     margin: 0 auto;
     background-color: #8268c1;
     padding: 2rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
   }
   .contenedor-filtros .categorias {
     width: 80%;
@@ -2766,9 +2795,12 @@ ul li a {
   .featured .featured-items .card .card-body .add-to-cart:hover {
     background-color: #534080;
   }
+  .products {
+    gap: 1rem;
+  }
   .products .card {
-    width: 45%;
-    margin: 0.5rem auto;
+    width: 48%;
+    margin: 0;
   }
   .products .card .card-body .add-to-cart .small {
     display: none;
@@ -3096,7 +3128,7 @@ ul li a {
     width: 150px;
   }
   .contenedor-filtros {
-    height: 300px;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3278,8 +3310,7 @@ ul li a {
     background-color: #534080;
   }
   .products .card {
-    width: 90%;
-    margin: 0.5rem auto;
+    width: 100%;
   }
   .products .card a {
     height: 200px;
@@ -3289,7 +3320,7 @@ ul li a {
     min-height: 4rem;
   }
   .products .card .card-body .card-text {
-    height: 3rem;
+    height: 2.4rem;
   }
   .products .card .card-body .add-to-cart .small {
     display: none;

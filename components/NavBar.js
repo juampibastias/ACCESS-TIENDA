@@ -240,7 +240,7 @@ function NavBar() {
                             </a>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                   { /* <li className="nav-item">
                         <Link href="/cart">
                             <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/cart')}>
                                 <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
@@ -260,7 +260,7 @@ function NavBar() {
                             </a>
                         </Link>
                        
-                    </li>
+                                </li> */}
                     <li className='nav-item'>
                         <div className='contenedor-form-search'>
             <form onSubmit={handleSubmit} autoComplete="off" className="nav-buscador-artic">

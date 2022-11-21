@@ -104,6 +104,26 @@ $color-2-2:rgb(130, 104, 193);
     }
 }
 
+//Mas contenido
+.loadcontentbtn {
+    display: flex;
+    margin: 0 auto;
+    background-color: $color-2-2;
+    font-family: sansation, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    transition: all 0.2s;
+    margin-bottom: 3rem;
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 16px 16px 11px -9px rgba(33, 5, 31, 0.45);
+        -webkit-box-shadow: 16px 16px 11px -9px rgba(33, 5, 31, 0.45);
+        -moz-box-shadow: 16px 16px 11px -9px rgba(33, 5, 31, 0.45);
+        background-color: $color-2;
+        color: white;
+    }
+}
+
 //LINKS NAV
 .links-list {
     display: flex;
@@ -872,8 +892,12 @@ $color-2-2:rgb(130, 104, 193);
 
             .text {
                 margin-left: 1rem;
-                display: block;
+                display: flex;
                 color: white;
+
+                h4 {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -2195,6 +2219,8 @@ ul li a {
         margin: 0 auto;
         background-color: $color-2-2;
         padding: 2rem;
+        margin-bottom: 1rem;
+        gap: 1rem;
 
         .categorias {
             width: 80%;
@@ -2504,21 +2530,15 @@ ul li a {
     //TIENDA
     //-----------
     .products {
-
+        gap: 1rem;
 
         .card {
-            width: 45%;
-            margin: 0.5rem auto;
-
-
+            width: 48%;
+            margin: 0;
 
 
             .card-body {
-
-
                 .add-to-cart {
-
-
                     .small {
                         display: none;
                     }
@@ -2987,7 +3007,7 @@ ul li a {
     }
 
     .contenedor-filtros {
-        height: 300px;
+        height: auto;
         display: flex;
         flex-direction: column;
 
@@ -3214,13 +3234,10 @@ ul li a {
 
 
         .card {
-            width: 90%;
-            margin: 0.5rem auto;
+            width: 100%;
 
             a {
                 height: 200px;
-
-
             }
 
             .card-body {
@@ -3233,7 +3250,7 @@ ul li a {
                 }
 
                 .card-text {
-                    height: 3rem;
+                    height: 2.4rem;
                 }
 
 

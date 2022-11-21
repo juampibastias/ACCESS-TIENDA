@@ -122,7 +122,7 @@ const Home = (props) => {
 
       {props.result < page * 20 ? "" :
         <button
-          className="btn btn-outline-info d-block mx-auto mb-4"
+          className="btn loadcontentbtn"
           onClick={handleLoadmore}
         >
           Mostrar más
