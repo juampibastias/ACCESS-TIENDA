@@ -442,6 +442,23 @@ body {
   display: none;
 }
 
+.contenedor-home .carousel-inner .carousel-item {
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+
+.contenedor-home .carousel-inner .carousel-item:first-of-type {
+  position: relative;
+}
+
+.contenedor-home .carousel-inner .carousel-item.active {
+  opacity: 1;
+}
+
 .contenedor-home .carousel-control-prev span {
   background-image: url("/images/btn-atras.png");
   width: 100px;

@@ -371,6 +371,27 @@ $color-2-2:rgb(130, 104, 193);
         display: none;
     }
 
+    .carousel-inner {
+        .carousel-item {
+            opacity: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: block;
+            position: absolute;
+
+            &:first-of-type {
+                position: relative;
+            }
+
+            &.active {
+                opacity: 1;
+            }
+        }
+
+
+    }
+
     .carousel-control-prev {
         span {
             background-image: url("/images/btn-atras.png");

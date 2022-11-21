@@ -79,7 +79,7 @@ const Home = (props) => {
       <Head>
         <title>ACCESS - HOME</title>
       </Head>
-      <Carousel prevLabel="" nextLabel="">
+      <Carousel fade prevLabel="" nextLabel="">
         <Carousel.Item>
           {size.width < 760 ? (
             <Image
