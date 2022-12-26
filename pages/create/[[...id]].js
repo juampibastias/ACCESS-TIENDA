@@ -95,8 +95,8 @@ const ProductsManager = () => {
     
         dispatch({type: 'NOTIFY', payload: {loading: true}})
         let media = []
-        const imgNewURL = images.filter(img => !img)
-        const imgOldURL = images.filter(img => img)
+        const imgNewURL = images.filter(img => !img.url)
+        const imgOldURL = images.filter(img => img.url)
 
         if(imgNewURL.length > 0) media = await imageUpload(imgNewURL)
 
@@ -194,7 +194,7 @@ const ProductsManager = () => {
                             images.map((img, index) => (
                                 <div key={index} className="file_img my-1">
                                     
-                                    <img src={img ? img : URL.createObjectURL(img)} alt="imagen" className="img-thumbnail rounded" />                       
+                                    <img src={img.url ? img.url : URL.createObjectURL(img)} alt="imagen" className="img-thumbnail rounded" />                       
 
                                      <span onClick={() => deleteImage(index)}>X</span>
                                 </div>

@@ -73,7 +73,7 @@ const Profile = () => {
         if(avatar) media = await imageUpload([avatar])
 
         patchData('user', {
-            name, avatar: avatar ? media[0] : auth.user.avatar
+            name, avatar: avatar ? media[0].url : auth.user.avatar
         }, auth.token).then(res => {
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
 

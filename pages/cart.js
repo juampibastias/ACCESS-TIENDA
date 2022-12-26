@@ -126,7 +126,7 @@ const Cart = (props) => {
     }
     //llamada a api de mercadopago
     axios
-      .post("http://localhost:3001/payment", {
+      .post("http://localhost:4110/payment", {
         data: itemMpArray,
         headers: {
           "Content-Type": "application/json",
