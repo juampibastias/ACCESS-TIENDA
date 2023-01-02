@@ -28,7 +28,7 @@ const Cart = (props) => {
   const cartSelect = props.provincias
     .slice(1, props.provincias.length)
     .map((tarifa) => tarifa.nombre);
-  const [tarifaProvincia, setTarifaProvincia] = useState(-1);
+  const [tarifaProvincia, setTarifaProvincia] = useState(0);
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
@@ -126,7 +126,7 @@ const Cart = (props) => {
     }
     //llamada a api de mercadopago
     axios
-      .post("http://localhost:4110/payment", {
+      .post("https://api-mp-access-test.herokuapp.com/payment", {
         data: itemMpArray,
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,9 @@ const Cart = (props) => {
   if (cart.length === 0)
     return (
       <div>
-        <h1 style={{textAlign:"center", marginTop:"10px"}}>CARRITO VACIO</h1>
+        <h1 style={{ textAlign: "center", marginTop: "10px" }}>
+          CARRITO VACIO
+        </h1>
         <Image
           className="img-responsive w-100"
           src={pibeDeFondo}
@@ -350,9 +352,9 @@ const Cart = (props) => {
               </div>
             </div>
             <h3>
-              Total: {" "}
+              Total:{" "}
               <span className="text-danger">
-                 ${(totalConEnvio = total + costoProvincias[tarifaProvincia])}
+                ${(totalConEnvio = total + costoProvincias[tarifaProvincia])}
               </span>
             </h3>
           </div>

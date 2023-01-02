@@ -1,26 +1,20 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import banner from "../public/images/banner.png";
-import banner1 from "../public/images/banner1.png";
-import banner2 from "../public/images/banner2.png";
-import banner3 from "../public/OFERTA-access.png";
-import banner4 from "../public/OFERTA-access1.png";
+import banner from "../public/images/BANNER-WEB.png";
+import banner1 from "../public/images/BANNER-WEBa.png";
+import banner2 from "../public/images/BANNER-WEBb.png";
+import banner3 from "../public/images/BANNER-WEBc.png";
 import bannerMobile from "../public/images/BANNER-MOBILE.png";
 import banner1Mobile from "../public/images/BANNER-MOBILE1.png";
 import banner2Mobile from "../public/images/BANNER-WEB2.png";
-import separatorImg from "../public/promos/ingreso.jpeg";
-import separatorImg2 from "../public/promos/ingreso_2.jpeg";
-import separatorImg3 from "../public/promos/ingreso_3.jpeg";
 import { Carousel } from "react-bootstrap";
 import { useState, useContext, useEffect } from "react";
 import { DataContext } from "../store/GlobalState";
 import { getData } from "../utils/fetchData";
 import ProductHome from "../components/product/ProductHome";
 import { useRouter } from "next/router";
-import SeparatorImage from "../components/separatorImg";
 import useWindowSize from "../components/getwindowSize";
-import Novedades from "./novedades";
 import Servicios from "./servicios"
 
 const Home = (props) => {
@@ -89,6 +83,17 @@ const Home = (props) => {
             />
           ) : (
             <Image className="d-block w-100" src={banner1} alt="First slide" />
+          )}
+        </Carousel.Item>
+        <Carousel.Item>
+          {size.width < 760 ? (
+            <Image
+              className="d-block w-100"
+              src={banner1Mobile}
+              alt="First slide"
+            />
+          ) : (
+            <Image className="d-block w-100" src={banner3} alt="First slide" />
           )}
         </Carousel.Item>
         <Carousel.Item>
