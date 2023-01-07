@@ -25,6 +25,7 @@ const Cart = (props) => {
   const nombresProvincias = props.provincias.map((tarifa) => tarifa.nombre);
   const costoProvincias = props.provincias.map((tarifa) => tarifa.costo);
 
+
   const cartSelect = props.provincias
     .slice(1, props.provincias.length)
     .map((tarifa) => tarifa.nombre);
@@ -245,7 +246,7 @@ const Cart = (props) => {
                 onChange={(e) => setProvincia(e.target.value)}
               >
                 {cartSelect.map((item, i) => (
-                  <option value={i}>{item}</option>
+                  <option value={i[0]}>{item}</option>
                 ))}
               </select>
 
@@ -346,7 +347,7 @@ const Cart = (props) => {
                   onClick={handlerTarifaProvincia}
                 >
                   {nombresProvincias.map((item, i) => (
-                    <option value={i}>{item}</option>
+                    <option value={i[0]}>{item}</option>
                   ))}
                 </select>
               </div>
@@ -381,10 +382,11 @@ export async function getServerSideProps() {
   jsonData = await fsPromises.readFile(filePath);
 
   objectData = JSON.parse(jsonData);
-
+  
   return {
     props: objectData,
   };
+
 }
 
 export default Cart;

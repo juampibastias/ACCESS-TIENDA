@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { patchData } from "../utils/fetchData";
 import { updateItem } from "../store/Actions";
-import { totalConEnvio } from "../pages/cart"
 
 
 
@@ -31,7 +30,6 @@ const OrderDetail = ({ orderDetail, state, dispatch }) => {
           "ADD_ORDERS"
         )
       );
-
       return dispatch({ type: "NOTIFY", payload: { success: res.msg } });
     });
   };
