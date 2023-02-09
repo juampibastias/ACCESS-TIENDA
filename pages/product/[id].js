@@ -17,6 +17,7 @@ const DetailProduct = (props) => {
         return ""
     }
     const route = useRouter();
+    console.log(route.asPath)
 
     return(
         <div className="contenedor-pdp">

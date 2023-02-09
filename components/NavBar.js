@@ -3,7 +3,10 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import {DataContext} from '../store/GlobalState'
 import Cookie from 'js-cookie'
+import Image from 'next/image'
+import logo from '../public/images/logo.png'
 import MiniCartWidget from './widget/minicart'
+import path from 'path'
 import { hostname } from 'os'
 
 
@@ -69,6 +72,9 @@ function NavBar() {
             <Link href="/categories">
                 <a className="dropdown-item">Categorias</a>
             </Link>
+            <Link href="/uploadPage">
+                <a className="dropdown-item">Carga servicios</a>
+            </Link>
             </>
         )
     }
@@ -120,6 +126,19 @@ function NavBar() {
             </button>
             <div className="collapse navbar-collapse join-loginsocial" >
                 <ul className="navbar-nav social-collapse p-1">
+         
+                    {/* <li className="nav-item shopping">
+                        <Link href="/cart">
+                            <a style={{color:'white'}} className={"nav-link" + isActive('/cart')}>
+                                <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
+                                    <span className="position-absolute cartitems-counter"
+                                   >
+                                        {cart.length}
+                                    </span>
+                                </i> CARRITO
+                            </a>
+                        </Link>
+                    </li> */}
                     {
                         Object.keys(auth).length === 0 
                         ? <li className="nav-item">
@@ -223,6 +242,27 @@ function NavBar() {
                             </a>
                         </Link>
                     </li>
+                   { /* <li className="nav-item">
+                        <Link href="/cart">
+                            <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/cart')}>
+                                <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
+                                    <span className="position-absolute"
+                                    style={{
+                                        padding: '3px 6px',
+                                        background: '#ed143dc2',
+                                        borderRadius: '50%',
+                                        top: '-10px',
+                                        right: '-10px',
+                                        color: 'white',
+                                        fontSize: '14px'
+                                    }}>
+                                        {cart.length}
+                                    </span>
+                                </i> CARRITO
+                            </a>
+                        </Link>
+                       
+                                </li> */}
                     <li className='nav-item'>
                         <div className='contenedor-form-search'>
             <form onSubmit={handleSubmit} autoComplete="off" className="nav-buscador-artic">

@@ -141,7 +141,7 @@ const Home = (props) => {
       {/* <SeparatorImage imagen={separatorImg} imagen2={separatorImg2} imagen3={separatorImg3}  title="aah"/> */}
 
       <div className="featured">
-        <h2>Nuevos Ingresos</h2>
+        <h1 style={{display: "flex", justifyContent: "center", paddingTop: "40px"}}>Productos Destacados</h1>
         <div className="featured-items">
           {products.length === 0 ? (
             <h2>No hay productos</h2>

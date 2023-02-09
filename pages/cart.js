@@ -25,7 +25,6 @@ const Cart = (props) => {
   const nombresProvincias = props.provincias.map((tarifa) => tarifa.nombre);
   const costoProvincias = props.provincias.map((tarifa) => tarifa.costo);
 
-
   const cartSelect = props.provincias
     .slice(1, props.provincias.length)
     .map((tarifa) => tarifa.nombre);
@@ -175,9 +174,7 @@ const Cart = (props) => {
   if (cart.length === 0)
     return (
       <div>
-        <h1 style={{ textAlign: "center", marginTop: "10px" }}>
-          CARRITO VACIO
-        </h1>
+        <h1 style={{textAlign:"center", marginTop:"10px"}}>CARRITO VACIO</h1>
         <Image
           className="img-responsive w-100"
           src={pibeDeFondo}
@@ -347,15 +344,15 @@ const Cart = (props) => {
                   onClick={handlerTarifaProvincia}
                 >
                   {nombresProvincias.map((item, i) => (
-                    <option value={i[0]}>{item}</option>
+                    <option value={i}>{item}</option>
                   ))}
                 </select>
               </div>
             </div>
             <h3>
-              Total:{" "}
+              Total: {" "}
               <span className="text-danger">
-                ${(totalConEnvio = total + costoProvincias[tarifaProvincia])}
+                 ${(totalConEnvio = total + costoProvincias[tarifaProvincia])}
               </span>
             </h3>
           </div>
@@ -382,11 +379,10 @@ export async function getServerSideProps() {
   jsonData = await fsPromises.readFile(filePath);
 
   objectData = JSON.parse(jsonData);
-  
+
   return {
     props: objectData,
   };
-
 }
 
 export default Cart;

@@ -23,13 +23,12 @@ const ProductItem = ({product, handleCheck}) => {
     const adminLink = () => {
         return(
             <>
-            <Link href={`create/${product._id}`}>
+               	<Link href={`create/${product._id}`}>
                 <button className="btn btn-info"
                     style={{marginRight: '5px', flex: 1}}> Editar
                 </button>
-            </Link>                
-            
-                <button className="btn btn-danger"
+            	</Link>                 
+		<button className="btn btn-danger"
                 style={{marginLeft: '5px', flex: 1}}
                 data-toggle="modal" data-target="#exampleModal"
                 onClick={() => dispatch({

@@ -85,6 +85,7 @@ const Profile = () => {
         })
     }
 
+    console.log(name)
     if(!auth.user) return null;
     return( 
         <div className="profile_page">
