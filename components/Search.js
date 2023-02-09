@@ -1,17 +1,7 @@
 import { useState } from 'react';
-import artefactos from '../uploaded-json/servicios.json';
-import axios from 'axios';
+import artefactos from '../public/uploaded_servicios/servicios.json';
 
-export async function getStaticProps() {
-  const jsonData = await axios.get('http://localhost:3000/uploaded-json/servicios.json');
-  console.log(jsonData)
-  return {
-    props: {
-      jsonData
-    }
-  }
-}
-function Search({ jsonData }){
+function Search() {
   const [resultados, setResultados] = useState(null);
 
   function buscarArtefacto(e) {
@@ -24,7 +14,7 @@ function Search({ jsonData }){
   }
 
   return (
-    <div>
+    <div style={{textAlign: "center"}}>
       <h1 style={{marginTop: '50px', textAlign: "center"}}>Consulta sobre Servicio Técnico</h1>
       <form method='post' action='#' onSubmit={buscarArtefacto} style={{textAlign: 'center', marginTop: '50px', display: "inline-block", justifyContent: "center"}}>
         <label>
@@ -41,7 +31,7 @@ function Search({ jsonData }){
               Codigo ingresado: {resultados.numero}
             </li>
             <li style={{textAlign: 'center', listStyle: 'none', color: "#534080", fontSize: "25px", fontWeight: "bold"}}>
-              Reparado: {resultados.reparado ? 'Sí' : 'No'}
+              {resultados.reparado ? 'Reparación finalizada!' : 'Reparación en proceso'}
             </li>
             {resultados.costoReparacion && (
               <li style={{textAlign: 'center', listStyle: 'none', fontSize: "20px"}}>
