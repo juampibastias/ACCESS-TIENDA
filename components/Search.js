@@ -14,7 +14,7 @@ function Search() {
   }
 
   return (
-    <div style={{textAlign: "center"}}>
+    <div>
       <h1 style={{marginTop: '50px', textAlign: "center"}}>Consulta sobre Servicio Técnico</h1>
       <form method='post' action='#' onSubmit={buscarArtefacto} style={{textAlign: 'center', marginTop: '50px', display: "inline-block", justifyContent: "center"}}>
         <label>
