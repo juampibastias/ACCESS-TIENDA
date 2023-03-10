@@ -58,6 +58,7 @@ const ProductsManager = () => {
     const reader = new FileReader();
     reader.onload = async (event) => {
       const products = JSON.parse(event.target.result);
+      console.log(products)
       for (const product of products) {
         setProduct({
           title: product.title,
@@ -68,7 +69,7 @@ const ProductsManager = () => {
           color: product.color,
           category: product.category,
         });
-
+console.log(setProduct);
         // assuming that the product has images
         setImages(product.images);
         handleSubmit({ preventDefault: () => {} });
@@ -83,17 +84,16 @@ const ProductsManager = () => {
       });
       setTimeout(() => {
         dispatch({ type: "CLEAR_NOTIFICATION" });
-        }, 500); 
+      }, 500);
     };
     reader.readAsText(file);
   };
 
-  const handleChangeInput = e => {
-    const {name, value} = e.target
-    setProduct({...product, [name]:value})
-    dispatch({type: 'NOTIFY', payload: {}})
-}
-  
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setProduct({ ...product, [name]: value });
+    dispatch({ type: "NOTIFY", payload: {} });
+  };
 
   const handleUploadInput = (e) => {
     dispatch({ type: "NOTIFY", payload: {} });
@@ -157,11 +157,13 @@ const ProductsManager = () => {
     )
       return dispatch({
         type: "NOTIFY",
-        payload: { success: "Realizando la carga masiva de productos, aguarde..." },
+        payload: {
+          success: "Realizando la carga masiva de productos, aguarde...",
+        },
       });
-      setTimeout(() => {
-        dispatch({ type: "CLEAR_NOTIFICATION" });
-        }, 1000); 
+    setTimeout(() => {
+      dispatch({ type: "CLEAR_NOTIFICATION" });
+    }, 1000);
 
     dispatch({ type: "NOTIFY", payload: { loading: true } });
     let media = [];
@@ -283,15 +285,17 @@ const ProductsManager = () => {
           <div className="input-group-prepend px-0 my-2">
             <select
               name="category"
-              id="category"
               value={category}
               onChange={handleChangeInput}
-              className="custom-select text-capitalize"
             >
-              <option value="all">Todos los productos</option>
-              {categories.map((item) => (
-                <option key={item._id} value={item._id}>
-                  {item.name}
+              <option value="">Seleccionar una categoría</option>
+              {categories.map((cat) => (
+                <option
+                  key={cat._id}
+                  value={cat.name}
+                  selected={cat.name === product.category}
+                >
+                  {cat.name}
                 </option>
               ))}
             </select>
@@ -336,7 +340,10 @@ const ProductsManager = () => {
           <h4 className="d-flex justify-content-center mb-5">
             Carga Masiva de Productos
           </h4>
-          <p className="d-flex justify-content-center mb-5">Es obligatorio refrescar esta pagina antes de realizar una carga masiva, para esto presione F5.</p>
+          <p className="d-flex justify-content-center mb-5">
+            Es obligatorio refrescar esta pagina antes de realizar una carga
+            masiva, para esto presione F5.
+          </p>
           <input
             type="file"
             onChange={handleUploadJson}
